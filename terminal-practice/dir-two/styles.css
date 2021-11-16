@@ -1,0 +1,43 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.nav-bar {
+    background-color: aqua;
+    position: fixed;
+    width: 100%;
+    margin: 10px;
+    font-size: xx-large;
+}
+
+.menu {
+    position: relative;
+    left: 550px;
+}
+
+.home {
+    position: relative;
+    left: 1100px;
+}
+
+
+
+
+
+#box1 {
+    border: 2px solid green;
+    padding: 10px 5px 10px 5px;
+    margin: 5px;
+}
+
+#box2 {
+    border: 2px solid blue;
+    padding: 10px 5px 10px 5px;
+    margin:5px;
+}
+
+.fall-leaves {
+    position: relative;
+    left:155px;
+}

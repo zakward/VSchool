@@ -1,0 +1,245 @@
+body, html {
+    height: 100%;
+}
+
+/* FRANCE */
+#france {
+   margin-left: 10px;
+   width: 300px;
+   text-align: center;
+}
+
+
+.france-container {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-template-rows: repeat(2,100px);
+    border: 1px solid black;
+    width: 300px;
+    margin-left: 10px;
+    margin-bottom: 30px;
+}
+
+
+#blue {
+    background-color: #002495;
+    grid-column: 1/2;
+    grid-row: 1/3;
+}
+
+#white {
+    background-color: #FFFFFF;
+    grid-column: 2/3;
+    grid-row: 1/3;
+}
+
+#red {
+    background-color: #ED2938;
+    grid-column: 3/4;
+    grid-row: 1/3;
+}
+
+/* GERMANY */
+
+#germany {
+    margin-left: 10px;
+    width: 300px;
+    text-align: center;
+}
+
+.germany-container {
+    display: grid;
+    grid-template-columns: repeat(3, 111px);
+    grid-template-rows: repeat(3, 66.66px);
+    border: 1px solid black;
+    width: 333.33px;    
+    height: 199.98px;
+    margin-left: 10px;
+    margin-bottom: 30px;
+}
+
+#black2 {
+    background-color: black;
+    grid-column: 1/4;
+    grid-row: 1/2;
+}
+
+#red2 {
+    background-color: #DE0002;
+    grid-column: 1/4;
+    grid-row: 2/3;
+}
+
+#yellow2 {
+    background-color: #FECE00;
+    grid-column: 1/4;
+    grid-row: 3/4;
+}
+
+/* MADAGASCAR */
+#madagascar {
+    margin-left: 10px;
+    width: 300px;
+    text-align: center;
+}
+
+.mad-container {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-template-rows: repeat(2,100px);
+    border: 1px solid black;
+    width: 300px;
+    margin-left: 10px;
+    margin-bottom: 30px;
+}
+
+#white3 {
+    background-color: white;
+    grid-column: 1/2;
+    grid-row: 1/4;
+}
+
+#red3 {
+    background-color: #FF0002;
+    grid-column: 2/4;
+    grid-row: 1/2;
+}
+
+#green3 {
+    background-color: #007E39;
+    grid-column: 2/4;
+    grid-row: 2/3;
+}
+
+/* SWITZERLAND */
+
+#switzerland {
+    margin-left: 10px;
+    width: 300px;
+    text-align: center;
+}
+
+.switz-container {
+    display: grid;
+    grid-template-columns: repeat(5, 60px);
+    grid-template-rows: repeat(5,60px);
+    border: 1px solid black;
+    width: 300px;
+    margin-left: 10px;
+    margin-bottom: 30px;
+    background-color: red;
+}
+
+#white4 {
+    background-color: white;
+    grid-column: 3/4;
+    grid-row: 2/5;
+}
+
+#white4a {
+    background-color: white;
+    grid-column: 2/5;
+    grid-row: 3/4;
+}
+
+/* SWEDEN */
+
+#sweden {
+    margin-left: 10px;
+    width: 300px;
+    text-align: center;
+}
+
+.sweden-container {
+    display: grid;
+    grid-template-columns: repeat(9, 35.55px);
+    grid-template-rows: repeat(5,40px);
+    background-color: #0269A6;
+    border: 1px solid black;
+    width: 320px;
+    margin-left: 10px;
+    margin-bottom: 30px;  
+}
+
+#yellow5 {
+    background-color: #FECC00;
+    grid-column: 4/5;
+    grid-row: 1/6;
+}
+
+#yellow5a {
+    background-color:#FECC00;
+    grid-column: 1/10;
+    grid-row: 3/4;
+}
+
+/* GAMBIA */
+
+#gambia {
+    margin-left: 10px;
+    width: 300px;
+    text-align: center;
+ }
+ 
+ 
+ .gambia-container {
+     display: grid;
+     grid-template-columns: repeat(2, 150px);
+     grid-template-rows: repeat(3, 66.66px);
+     border: 1px solid black;
+     width: 300px;
+     margin-left: 10px;
+     margin-bottom: 30px;
+ }
+
+ #red6 {
+     background-color: #CE1127;
+     grid-column: 1/-1;
+     grid-row: 1/2;
+ }
+
+#white6 {
+    background-color: #0D1D8B;
+    border-top:10px solid #FFFFFF;
+    border-bottom: 10px solid white;
+    grid-column: 1/-1;
+    grid-row: 2/3;
+}
+
+#green6 {
+    background-color: #3B7827;
+    grid-column: 1/-1;
+    grid-row: 3/4;
+}
+
+/* JAPAN */
+#japan {
+    margin-left: 10px;
+    width: 300px;
+    text-align: center;
+ }
+ 
+ 
+ .japan-container {
+     display: grid;
+     grid-template-columns: repeat(6, 50px);
+     grid-template-rows: repeat(6, 33.33px);
+     border: 1px solid black;
+     width: 300px;
+     margin-left: 10px;
+     margin-bottom: 30px;
+ }
+
+
+
+
+
+
+
+
+
+
+
+
+
+

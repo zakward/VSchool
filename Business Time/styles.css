@@ -1,0 +1,175 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* NAV BAR */
+
+.nav-bar {
+    background: linear-gradient(rgb(172, 47, 47), rgb(100, 7, 7));
+    height: 76px;
+    border: 2px solid black;
+    width: 100%;
+}
+
+.menu-items  {
+    display: flex;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    list-style-type: none;
+    color: white;
+    justify-content: space-around;
+    align-items: flex-end;
+    height: 76px;
+    width: 100%;
+}
+.home-link {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: white;
+    text-decoration: none; 
+ }
+ .schedule-link {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: white;
+    text-decoration: none; 
+ }
+
+.menu-items .tusk2Tail {
+    font-size: 46pt;
+    color: white;
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight:bold;
+    height: 50px;
+}
+
+.user-wrapper {
+    float: right;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: white;
+    position: relative;
+    right: 10px;
+    top: 15px;
+}
+
+.login-btn {
+    padding: 5px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: white;
+    text-decoration: none;
+    position: relative;
+    right: 10px;
+    font-size: 16px;
+}
+
+.join-btn {
+    padding: 5px;
+    background-color: #7cce62;
+    color: white;
+    position: relative;
+    bottom: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+
+/* MAIN CONTENT*/
+
+.main-container {
+    margin-top: 20px;
+    margin-left: 50px;
+}
+
+ .main-heading {
+    text-align: center;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 38pt;
+    width: 800px;
+ }
+
+ #betting-line {
+     font-size: x-large;
+     font-weight: bolder;
+     margin-top: 15px;
+ }
+ 
+.img-container {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 10pt;
+    padding: 20px;
+    height: auto;
+    float: left;
+    width: 400px;
+    text-align: center;
+}
+
+.coach-text-link {
+    text-decoration: none;
+    color: black;
+}
+
+.first {
+    width: 800px;
+    margin-right: 40px;
+}
+
+.bball-pic {
+    width: 400px;
+    height: auto;
+}
+
+.main-site-footer {
+    border: 2px rgb(100, 7,7) solid;
+    width: 100%;
+    height: 120px;
+    display: inline-block;
+    background: linear-gradient(rgba(196, 35, 35, 0.527), rgb(100, 7, 7));
+}
+
+.footer-logo {
+    font-size: 24pt;
+    color: white;
+    font-family: 'Josefin Sans', sans-serif;
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-weight: bolder;
+}
+
+.footer-links-list {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    list-style-type: none;
+    color: white;
+    justify-content: space-around;
+    display: flex;
+    margin-top: 20px;
+    font-size: smaller;
+}
+
+.last {
+    font-size: xx-small;
+    margin-top: 30px;
+}
+
+@media only screen and (max-width: 812px) {
+    .nav-bar {
+        width: 875px;
+    }
+
+    .main-container {
+        margin-left: 18px;
+    }
+    
+    .main-site-footer {
+        width: 875px;
+    }
+
+   .second {
+    margin-left: 200px;
+   }
+}
+
+
+
+
+
+

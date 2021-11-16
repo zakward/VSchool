@@ -1,0 +1,93 @@
+.home-link {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: white;
+    text-decoration: none; 
+ }
+
+.header-container {
+    width: 100%;
+    text-align: center;
+}
+
+
+.football-schedule-header {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: x-large;
+    margin-top: 30px;
+}
+
+.header-container img {
+    width: 50%;
+    height: auto;
+    margin-top: 30px;
+}
+
+#bball-schedule-two {
+    width: 47%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    padding-top: 10px;
+    padding-right: 50px;
+}
+
+
+.main-container {
+    width: 100%;
+    display: flex;
+    margin-left: 20px;
+    margin-right:  20px;
+    margin-bottom: 20px;
+}
+
+
+.schedule-img {
+    width: 75%;
+    height: auto;
+}
+
+.img-container-one {
+    width: 47%;
+    padding: 20px;
+    text-align: center;
+    border-right: solid 2px black;
+    
+}
+
+.img-container-two {
+    width: 47%;
+    padding: 20px;
+    text-align: center;
+    border-left: solid 2px black; 
+}
+
+.img-container-two img {
+    margin-top: 20px;
+}
+
+@media only screen and (max-width: 812px) {
+    .main-container {
+        display: block;
+        margin-left: 75px;
+    }
+   
+    .schedule-img {
+        width: 700px;
+        height: auto;
+    }
+
+    .img-container-one {
+        border: none;
+    }
+
+    .img-container-two {
+        border: none;
+    }
+
+    .football-schedule-header {
+        font-size: medium;     
+        width: 675px;        
+        text-align: center;   
+    }
+}   
