@@ -43,9 +43,9 @@ while (!dead && !findKey) {
                                     }
                                     
                 }   else if (response[firstMove] == "Put your hand in the hole") {
-                            dead = true;
-                            console.log("I said NO!!!  GAME OVER YOU DIED!!")
-                            process.exit()
+                                dead = true;
+                                console.log("I said NO!!!  GAME OVER YOU DIED!!")
+                                process.exit()
            
                        
                 }   if (firstMove == -1) {
@@ -54,13 +54,13 @@ while (!dead && !findKey) {
                              
                         
                  }     else if (response[firstMove] == "Find the key!") {
-                            findKey = !findKey
-                            console.log("CONGRATULATIONS!! You have opend the door and escaped the room!!")
-                            openDoor()
+                                    findKey = !findKey
+                                    console.log("CONGRATULATIONS!! You have opend the door and escaped the room!!")
+                                    openDoor()
                         }
 
                     else if (response[firstMove] == "Open the Door") {
-                            console.log("The door is locked.. You must find the key!")
+                                    console.log("The door is locked.. You must find the key!")
                     }
                 }
     
