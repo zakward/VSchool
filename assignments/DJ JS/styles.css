@@ -20,3 +20,9 @@
     margin: auto;
     margin-top: 50px;
 }
+
+.header {
+    font-size: large;
+    text-decoration: underline;
+}
+
