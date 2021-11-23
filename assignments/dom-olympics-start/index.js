@@ -33,13 +33,16 @@ rightSecond.textContent = "He told me you killed him!!"
 
 var clearButton = document.getElementById("clear-button")
 
+/* TRY TO SET A GLOBAL THEME 1 and THEME 2 Style setting
+// var themeOne = messageLeft.style.backgroundColor = "burlywood"
+//     messageRight.style.backgroundColor = "lightblue"
+//     messageLeft.style.color = "black"
 
+// var themeTwo = messageLeft.style.backgroundColor = "lightcoral"
+// messageRight.style.backgroundColor = "black"
+// messageLeft.style.color = "black"
+// messageRight.style.color = "white"
 
-var messageLeft  = document.querySelectorAll(".message.left")
-var messageRight = document.querySelectorAll(".message.right")
-var messageLeft2 = document.getElementById("left-second")
-var messageRight2 = document.getElementById("right-second")
-var messageLeft3 = document.getElementById("left-third")
 
 clearButton.addEventListener("click", function() {
     var messages = document.getElementById("messages")
@@ -58,7 +61,6 @@ sendBtn.addEventListener("click", () => {
     newMessageDiv.textContent = value;
     messageHeader.appendChild(newMessageDiv)
     newMessageDiv.className = "message right"
-    
 }
 )
 
@@ -66,9 +68,10 @@ sendBtn.addEventListener("click", () => {
 var dropDown = document.getElementById("theme-drop-down")
 
 dropDown.addEventListener("change", function(e) {
+var messageLeft  = document.querySelectorAll(".message.left")
+var messageRight = document.querySelectorAll(".message.right")
+
 var value = e.target.value
-var themeOne = document.getElementById("theme-one")
-var themeTwo = document.getElementById("theme-two")
         if(value === "theme-one") {
         console.log("test")
         messageLeft.forEach(element => {

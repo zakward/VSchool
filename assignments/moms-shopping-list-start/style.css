@@ -1,0 +1,103 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+
+.title-bar {
+    background-color:rgb(218, 213, 213);
+    border: 2px solid black;
+}
+
+.title {
+    font-family: "Estonia";
+    text-align: center;
+}
+
+#shopping-title {
+    font-family: "Estonia";
+    text-align: center;
+    font-size: 64px;
+    height: 50px;
+    margin-bottom: 2px;
+    padding-bottom: 2px;
+    margin-top: 0px;
+}
+
+.for-mom-header {
+    text-align: center;
+    font-family: "Estonia";
+    font-size: 32px;
+    margin-top: 2px;
+    margin-left: 193px;
+    margin-bottom: 10px;
+}
+
+.main {
+    border: 2px solid black;
+    width: 50%;
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 0;
+}
+
+#add-item {
+    border: 1px solid black;
+}
+
+.input {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid rgb(211, 201, 201);
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.label {
+    margin: 10px;
+    font-family: "Estonia";
+    font-weight: bold;
+    font-size: 36px;
+    margin-left: 22px;
+}
+
+.form-header {
+    font-size: 36px;
+    margin-top: 5px;
+    margin-bottom: 0px;
+}
+
+::placeholder {
+    margin: 10px;
+    font-family: "Estonia";
+    font-weight: bold;
+    font-size: 36px;
+    vertical-align: center;
+}
+
+#list {
+    flex-direction: column;
+    display: flex;
+}
+
+#list > li {
+    list-style-type: none;
+    margin: 10px auto;
+}
+
+#list div {
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+#submit-btn {
+    margin-left: 22px;
+    background-color: rgb(211, 201, 201);
+}
+
+.submit-btn {
+    margin-left: 22px;
+    background-color: rgb(211, 201, 201);
+}
