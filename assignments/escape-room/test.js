@@ -25,6 +25,9 @@ var isAlive= true;
 let response = ["Do nothing!", "Put your hand in the hole", "Open the Door", "Find the key!",]
 let keyResponse = ["Look behind the picture", "Look on the table", "Look under the rug", "Give Up"]
 let hasKey= false;
+function toggle() {
+    hasKey = !hasKey;
+}
 
 
 
@@ -54,20 +57,20 @@ function openDoor() {
                     }
                     else if (response[firstMove] == "Open the Door") {
                                                 console.log("You have chosen to open the door!!")                                                   
-                                                if(hasKey=true) {
-                                                console.log("CONGRATULATIONS!! You have opend the door and escaped the room!!")
-                                                openDoor()
-                                 }  else {
-                                     console.log("The door is locked!! You must find the key!!")
-                                 }   
+                                                if(hasKey==true) {
+                                                    console.log("CONGRATULATIONS!! You have opend the door and escaped the room!!")
+                                                    openDoor()
+                                                }  else {
+                                                        console.log("The door is locked!! You must find the key!!")
+                                                }   
 
                     } else if(response[firstMove]=="Find the key!"){
                                             let keyQuestion= readline.keyInSelect(keyResponse, "Where do you want to look!!?");
-                                                                    if(keyResponse[keyQuestion]== "Look under the rug")
-                                                                                    console.log("You found the key!!")
-                                                                                    function toggle() {
-                                                                                        hasKey = !hasKey;
-                                                                                    }
+                                                                    if(keyResponse[keyQuestion]== "Look under the rug") {
+                                                                        console.log("You found the key!!")
+                                                                        toggle()
+                                                                    }      
+                                                                                 
                                                                     if(keyResponse[keyQuestion]== "Look behind the picture")  {
                                                                                     console.log("You did not find the key.. KEEP LOOKING!!")
                                                                     }  

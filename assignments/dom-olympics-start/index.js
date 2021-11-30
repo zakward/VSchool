@@ -31,9 +31,9 @@ leftSecond.textContent = "Obi-Wan never told you what happened to your father!"
 var rightSecond = document.getElementById("right-second")
 rightSecond.textContent = "He told me you killed him!!"
 
-var clearButton = document.getElementById("clear-button")
 
-/* TRY TO SET A GLOBAL THEME 1 and THEME 2 Style setting
+
+// TRY TO SET A GLOBAL THEME 1 and THEME 2 Style setting
 // var themeOne = messageLeft.style.backgroundColor = "burlywood"
 //     messageRight.style.backgroundColor = "lightblue"
 //     messageLeft.style.color = "black"
@@ -44,10 +44,12 @@ var clearButton = document.getElementById("clear-button")
 // messageRight.style.color = "white"
 
 
-clearButton.addEventListener("click", function() {
+// CLEAR BUTTON
+var clearButton = document.getElementById("clear-button")
+clearButton.addEventListener("click", function() {  
     var messages = document.getElementById("messages")
-    console.log("clear test")
-    messages.textContent = ""
+        console.log("clear test")
+        messages.textContent = ""
 }
 )
 /* NEW MESSAGE */

@@ -230,6 +230,14 @@ body, html {
      margin-bottom: 30px;
  }
 
+ #red7 {
+     background-color: #BC022C;
+     grid-column: 3/5;
+     grid-row: 3/5;
+     border-radius: 50%;
+     
+ }
+
 
 
 

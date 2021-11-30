@@ -15,8 +15,10 @@ if (gamePlay[choice] == "yes") {
                 console.log("Too Bad!!  GOODBYE!")
                 process.exit()
 
+}       if (choice == -1) {
+        console.log("exit")
+        process.exit()
 }
-
 
 
 let findKey= false;
@@ -29,7 +31,7 @@ function openDoor() {
 // let keyResponse = ["Look under the rug", "Look behind the picture", "Look on the table", "Give Up"]
 
 while (!dead && !findKey) {
-    let response = ["Do nothing!", "Put your hand in the hole", "Open the Door", "Find the key!", ]
+    let response = ["Do nothing!", "Put your hand in the hole", "Open the Door", "Find the key!"]
     const firstMove =readline.keyInSelect(response, "What is your move!? ");
 
                     if (response[firstMove] == "Do nothing!") {
