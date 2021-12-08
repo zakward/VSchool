@@ -1,0 +1,68 @@
+#mainHeader {
+    background-color: grey;
+    display: inline-block;
+    color: white;
+    padding: 10px;
+    border: 2px solid black;
+}
+/* ADDITION STYLES */
+#label {
+    margin-right: 5px;
+}
+
+/*BTN STYLES */
+#addBTN {
+    margin-left: 5px;
+}
+#subBTN {
+    margin-left: 5px;
+}
+#multBTN {
+    margin-left: 5px;
+}
+
+#add {
+    background-color: darkgreen;
+    display: inline-block;
+    color: white;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+#add > input {
+    background-color: lightgreen;
+    font-size: large;
+    width: 30px;
+    
+
+}
+
+/* SUBTRACTION STYLES */
+#sub {
+    background-color: blue;
+    display: inline-block;
+    color: white;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+#sub > input {
+    background-color: lightskyblue;
+    font-size: large;
+    width: 30px;
+}
+
+/* ADDITION STYLES */
+#mult {
+    background-color: orangered;
+    display: inline-block;
+    color: white;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+#mult > input {
+    background-color: lightsalmon;
+    font-size: large;
+    width: 30px;
+}

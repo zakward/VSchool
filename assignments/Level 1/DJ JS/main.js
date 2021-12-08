@@ -1,4 +1,5 @@
 var box = document.getElementById("box")
+
 // console.log("box")
 
 box.addEventListener("mouseover", function() {
@@ -34,7 +35,7 @@ document.addEventListener("wheel", function() {
 )
 
 document.addEventListener("keydown", event => {
-    if (event.keyCode === 66) {
+    if (event.keyCode=== 66) {
         box.style.backgroundColor = "blue"
         }   else if(event.keyCode === 87) {
             box.style.backgroundColor = "white"
