@@ -32,7 +32,7 @@
 #add > input {
     background-color: lightgreen;
     font-size: large;
-    width: 30px;
+    width: 50px;
     
 
 }
@@ -45,11 +45,13 @@
     padding: 10px;
     margin-bottom: 10px;
 }
-
+span {
+    padding: 5px;
+}
 #sub > input {
     background-color: lightskyblue;
     font-size: large;
-    width: 30px;
+    width: 50px;
 }
 
 /* ADDITION STYLES */
@@ -64,5 +66,5 @@
 #mult > input {
     background-color: lightsalmon;
     font-size: large;
-    width: 30px;
+    width: 50px;
 }
