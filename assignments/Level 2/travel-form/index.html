@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Form</title>
+    <link rel = "stylesheet" href = "styles.css">
+</head>
+<body>
+    <h1 id="mainH1">SEC AIRLINES</h1>
+    <h2 id = "mainH2">Travel Form</h2>
+<form name="myForm" id ="myForm">
+    <div class ="form-container">
+        <div class = "name-container">
+            <label>First Name:</label>
+            <input class = "input" name = "firstName" type = "text" />
+            <label>Last Name:</label>
+            <input class = "input"name = "lastName" type = "text" />
+        </div>
+
+<br>
+<div class = "name-container">
+    <label id ="label">Age:</label>
+    <input class = "input" name = "age" type = "number"/>
+    <label class = "label">Gender:</label>
+    <label>Male</label>
+    <input class = "input" name = "gender" type = "radio" value = "male" />
+    <label>Female</label>
+    <input class = "input" name = "gender" type = "radio" value = "female" />
+</div>
+
+<br>
+<div class = "name-container">
+    <label id ="label">Location</label>
+    <select id = "dropdown" class = "input" name = "location">
+        <option value = "Arkansas">Arkansas</option>
+        <option value = "Texas">Texas</option>
+        <option value = "Florida">Florida</option>
+    </select>
+    <label>Diet:</label>
+    <span id ="selectAllThatApply">(please select ALL that apply)</span>
+</div>
+            <div class = "diet-container">
+                Vegetarian<input class = "input" name = "dietOptions" type = "checkbox" value = "vegetarian"/>
+                Kosher<input class = "input"name = "dietOptions" type = "checkbox" value = "kosher"/>
+                Lactose Free<input class = "input" name = "dietOptions" type = "checkbox" value = "lactose free"/>
+            </div>
+    <button id = "submit" class ="submit" type = "submit" name = "submit">submit</button>
+</div>
+</form>
+    <script src="main.js"></script>
+</body>
+</html>

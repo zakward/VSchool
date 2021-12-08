@@ -1,0 +1,91 @@
+body {
+    background-image: url("https://image.freepik.com/free-vector/gradient-dynamic-blue-lines-background_23-2148995756.jpg");
+    background-size: cover;
+}
+
+
+#mainH1 {
+    text-align: center;
+    font-size: 64px;
+    color: white;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    -webkit-text-stroke-width: 1.5px;
+    -webkit-text-stroke-color: black;
+    margin-top: 10px;;
+    
+}
+
+#mainH2 {
+    text-align: center;
+    font-size: 46px;
+    color: white;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    -webkit-text-stroke-width: 1.5px;
+    -webkit-text-stroke-color: black;
+}
+
+#myForm {
+    color: white;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    -webkit-text-stroke-color: black;
+    -webkit-text-stroke-width: 1px;
+    font-size: 46px;
+    text-align: center;
+    padding: 15px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.form-container {
+    text-align: center;
+    padding: 5px;
+    margin-bottom: 20px;
+}
+
+
+.input {
+    text-align: center;
+    margin: 15px;
+    height: 30px;
+}
+
+#dropdown {
+    text-align: center;
+    margin: 15px;
+    height: 36px;
+}
+
+#selectAllThatApply {
+    font-size: 26px;
+    text-align: center;
+    margin-top: 15px;
+    margin-left: 15px;
+}
+
+.diet-container {
+    font-size: 26px;
+    margin-top: 4px;
+   display: flex;
+   flex-direction: row;
+   align-items: center;
+   justify-content: center;
+    
+}
+
+.submit {
+    width: 100px;
+    height: auto;
+    font-size: 26px;
+    margin-right: 45px;
+}
+
+.label {
+    margin-right: 25px;
+    margin-left: 25px;
+}
+
+.name-container {
+    display: flex;
+    flex-direction: row;
+}
