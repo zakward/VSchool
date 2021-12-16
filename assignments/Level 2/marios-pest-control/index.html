@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mario's Pest Control</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="http://fonts.cdnfonts.com/css/new-super-mario-font-u" rel="stylesheet">
+                
+</head>
+<body>
+    <header id = "header">
+        <img id = "mario" src="https://media.wired.com/photos/5926c126af95806129f50868/master/w_2560%2Cc_limit/SuperMarioRunTA.jpg">
+        <h1 id = "mainH1">Mario's Pest Control</h1>
+        <img id="luigi" src = " https://www.pngkey.com/png/full/11-114692_mario-and-luigi-png-image-transparent-super-mario.png">
+    </header>
+    
+    <form id ="myForm" name = "myForm">
+        <ul id = "pestList">
+            <div id="pest-container">
+                <img class="baddies" src = "https://mario.wiki.gallery/images/6/65/Goomba_-_Mario_Party_Superstars.png">
+                <li>Goomba's</li>
+                <div class = "price">5 Coins ea.</div>
+                <input name = "goombaInput" class = "qty" type = "number" placeholder="qty"/>
+                <div class ="instructions" >Enter total number of Goomba's caught</div>
+            </div>
+    
+            <div id="pest-container">
+                <img class="baddies" src = "https://www.pngitem.com/pimgs/m/156-1562443_bob-omb-mario-bomb-omb-hd-png-download.png">
+                <li>Bob-omb's</li>
+                <div class = "price">7 Coins ea.</div>
+                <input name = "bobombInput" class = "qty" type = "number" placeholder="qty"/>
+                <div class ="instructions">Enter total number of Bob-omb's caught</div>
+            </div>
+    
+            <div id="pest-container">
+                    <img class="baddies" src = "https://static.wikia.nocookie.net/mario/images/7/71/NSMBU_Cheep_Cheep.png/revision/latest?cb=20190808220102">
+                    <li>Cheep-cheeps</li>
+                    <div class = "price">11 Coins ea.</div>
+                    <input name = "cheepCheepInput" class = "qty" type = "number" placeholder="qty"/>
+                    <div class ="instructions">Enter total number of Cheep-eep's caught</div>
+            </div>    
+        </ul>
+
+        <div class="total-container">
+            <button class= "submit" type = "submit" name = "submit">SUBMIT</button>
+            <button class = "submit" type = "reset" name= "reset">RESET</button>
+            <div id="totalCost">TOTAL COST =
+                <output id ="output"></output>
+            </div>
+        </div>
+    </form>
+    <br>
+
+    <footer id = "footer-container">
+        <span><u>email:</u>  mario@mpc.com</span>
+        <span><u>website:</u>www.mariospestcontrol.com</span>
+        <span><u>address:</u>  #1 Toad Town Road, Mushroom Kingdom, NY 72718</span>
+    </footer>
+    <script src ="main.js"></script>
+</body>
+</html>

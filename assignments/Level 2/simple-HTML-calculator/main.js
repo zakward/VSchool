@@ -20,7 +20,6 @@ subBTN.addEventListener("click", function(e) {
     let subSum = (+subNum1 - +subNum2)
     console.log(subSum)
     form.subOutput.textContent = subSum
-    form.subOutput.textContent = subSum 
     form.subOutput.style.fontSize = "22px"
     form.subOutput.style.marginLeft = "5px"
 })
@@ -33,7 +32,6 @@ multBTN.addEventListener("click", function(e) {
     let multSum = (+multNum1 * +multNum2)
     console.log(multSum)
     form.multOutput.textContent = multSum
-    form.multOutput.textContent = multSum 
     form.multOutput.style.fontSize = "22px"
     form.multOutput.style.marginLeft = "5px"  
 })

@@ -1,0 +1,226 @@
+* {
+    margin: 0;
+}
+
+#header  {
+    background-color: rgb(197, 11, 11);
+    border: 1px solid black;
+    height: 100px;
+    display: flex;    
+    justify-content: center;
+}
+
+#header >img {
+    width: auto;
+    height: 100px;
+    object-fit: scale-down;
+}
+
+#luigi {
+    margin-left: 40px;
+}
+
+#header > #mainH1 {
+    color: white;
+    text-align: center;
+    font-size: 65px;
+    padding-left: 25px;
+    padding-top: 15px;
+    font-family: 'New Super Mario Font U', sans-serif;
+}
+
+.baddies {
+    width: auto;
+    height: 300px;
+    object-fit: scale-down;
+}
+
+#pestList {
+    list-style-type: none;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-left: 0;
+}
+
+#pest-container {
+    justify-content: center;
+    margin-top: 25px;
+    padding: 25px;
+    margin-left: 100px;
+    margin-right: 100px;
+}
+#pest-container > li {
+font-family: 'New Super Mario Font U', sans-serif; 
+font-size: 35px;
+}
+
+#pestList > li > div {
+    text-align: center;
+    display: inline;
+}
+
+.price {
+    font-family: 'New Super Mario Font U', sans-serif; 
+    font-size: 25px;
+}
+.qty {
+    margin-top: 15px;
+    width: 100px;
+    height: 25px;
+    border: 1px solid black;
+    font-size: 16px;
+    text-align: center;
+}
+
+::placeholder {
+    text-align: center;
+}
+
+#output {
+    border: 3px solid black;
+    width: 300px;
+    height: 50px;
+    display: inline-block;
+    margin-top: 10px;
+    margin-left: 5px;
+}
+
+.instructions {
+    font-family: 'New Super Mario Font U', sans-serif; 
+    font-size: 15px;
+    margin-top: 25px;
+}
+
+.total-container {
+    text-align: center;
+}
+
+.submit {
+    margin-top: 10px;
+    margin-right: 59px;
+    margin-left: 35px;
+    text-align: center;
+    font-family:'New Super Mario Font U', sans-serif;  
+    font-size: 25px;
+    background-color: green;
+    -webkit-text-stroke: .3px;
+    -webkit-text-stroke-color: white;
+    padding: 5px;
+}
+
+#totalCost {
+    margin-top: 50px;
+    text-align: center;
+    font-family:'New Super Mario Font U', sans-serif;  
+    font-size: 45px;
+}
+
+#footer-container {
+    background-color: rgb(197, 11, 11);
+    border: 1px solid black;
+    height: 75px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    font-family: 'New Super Mario Font U', sans-serif;
+    font-size: 25px;
+    color: white;    
+}
+
+#footer-container > span {
+    padding: 50px;
+    text-align: center;
+}
+
+/* phone */
+@media only screen and (max-width: 375px) {
+
+#header {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#header > #mainH1 {
+    font-size: 20px;
+    margin : 5px;
+    padding-left : 0;
+    text-align: center;
+}
+#header >img {
+    width: auto;
+    height: 25px;
+    object-fit: scale-down;
+    margin-top: 10px;
+}
+
+
+.baddies {
+    width: auto;
+    height: 89px;
+    object-fit: scale-down;
+}
+#pest-container > li {
+    font-family: 'New Super Mario Font U', sans-serif; 
+    font-size: 23px;
+    }
+
+#pestList {
+    list-style-type: none;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-left: 0;
+}
+#pest-container {
+    justify-content: center;
+    margin-top: 25px;
+    padding: 5px;
+    margin-left: 90px;
+    margin-right: 100px;
+}
+
+#footer-container {
+    background-color: rgb(197, 11, 11);
+    border: 1px solid black;
+    height:20px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    font-family: 'New Super Mario Font U', sans-serif;
+    font-size: 6px;
+    color: white;    
+}
+#totalCost {
+    margin-top: 10px;
+    text-align: center;
+    font-family:'New Super Mario Font U', sans-serif;  
+    font-size: 15px;
+}
+
+#output {
+    border: 3px solid black;
+    width: 150px;
+    height: 20px;
+    display: inline-block;
+    margin-top: 20px;
+    margin-left: 5px;
+    font-size: 18px;
+}
+.price {
+    font-size: 15px;
+}
+.submit {
+    font-size: 15px;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+}
