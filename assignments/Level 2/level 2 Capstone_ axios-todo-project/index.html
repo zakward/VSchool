@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Axios Todo List</title>
+    <link rel = "stylesheet" href = "styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Estonia&family=Josefin+Sans:wght@100&family=Neuton:ital@1&family=Shadows+Into+Light&family=Vujahday+Script&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header id ="header-container">
+        Zak's To Do List
+    </header>
+    
+    <form class = "todo-form" name = "todo-form">
+        <input class = "todo-input" type ="text" name ="title" placeholder="Title">
+        <input class = "todo-input" type ="text" name ="description" placeholder="Description">
+        <input class = "todo-input" type ="text" name ="price" placeholder="Price">
+        <input class = "todo-input" type = "url" name = "imgUrl" placeholder = "Img Url">
+        <br>
+        <button id ="submit" class = "todo-input" type = "submit">SUBMIT</button>
+    </form>
+
+
+    <form class ="editForm" name = "editForm">
+            <h1 id = "edit-header">EDIT To Do</h1>
+            <input class = "edit-input" type ="text" name ="edit-title" placeholder="Title">
+            <input class = "edit-input" type ="text" name ="edit-description" placeholder="Description">
+            <input class = "edit-input" type ="text" name ="edit-price" placeholder="Price">
+            <input class = "edit-input" type = "url" name = "edit-imgUrl" placeholder = "Img Url">
+            <br>
+            <button id ="saveBtn" class = "edit-input" type= "button" name="saveBtn">SAVE</button>
+        </form>
+    
+<div id="todo-list">
+
+
+</div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.js"></script> 
+    <script src = "main.js"></script>
+</body> 
+</html>

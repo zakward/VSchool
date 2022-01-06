@@ -1,0 +1,64 @@
+{
+    "menu": {
+        "appetizers": [
+            {
+                "name": "nachos supreme" ,
+                "ingredients": ["corn chips", "sour cream", "salsa", "mexican cheese", "beans", "bbq chicken" ],
+                "description": "our nachos supreme combines the best bbq chicken in town with your favorite nacho toppings"
+            },
+            {
+                "name": "wings and things",
+                "ingredients": ["chicken wings", "hot or mild sauce", "choice of fries or tots" ],
+                "description": "your choice of boneless or bone-in chicken wings topped with hot or mild sauce with a side of fries or tots"
+            }
+        ],
+        "cold sandwiches": [
+            {
+                "name": "cranberry-walnut chicken salad sandwich",
+                "ingredients": ["mayonnaise", "honey Dijon mustard", "cubed rotisserie chicken", "swiss cheese", "dried cranberries", "chopped walnuts", "pumpernickel bread" ],
+                "description": "simple yet special cranberry walnut chicken salad sandwiches. Tangy cranberries and crunchy celery pep up the chicken"
+            },
+            {
+                "name": "cobb salad sub",
+                "ingredients": ["italian bread", "balsamic cinaigrette", "baby spinach", "slide deli ham", "chopped eggs", "bacon"] ,
+                "description": "when we need a quick meal to share, we turn Cobb salad into a sandwich masterpiece. sometimes I substitute tortillas for the bread and make wraps instead"
+            }
+        ],
+        "hot sandwiches": [
+            {
+                "name": "mojito pulled pork",
+                "ingredients": ["boneless pork shoulder roast", "oregano, cumin, parpika, pepper", "cilantro", "chopped green chile", " chicken broth", "bbq sauce", "pickle chips"],
+                "description": "This fork-tender pulled pork tastes fabulous on a bun, in a wrap or tortilla. My kids like to eat it spooned over rice in its citrus-flavored juices."
+            },
+            {
+                "name": "philly cheese sandwhich",
+                "ingredients": ["boneless beef chuck roast", "onions", "worcestershire sauce", "dried oregano", "red and green peppers", "pepper jack cheese"] ,
+                "description": "tender and delicious with a taste of Philly!"
+            }
+        ],
+        "deserts": [
+            {
+                "name": "raspberry chocolate puffs",
+                "ingredients": ["chocolate chips", "white baking chips", "pecans", "frozen puff pastry thawed", "raspberries", "confectioners sugar"],
+                "description": "This chocolaty, flaky dessert is one of my favorite show-off recipes because it makes a spectacular presentation. The best part? It’s actually surprisingly easy and quick to make."
+            },
+            {
+                "name": "nutella hand pies",
+                "ingredients": ["egg", "puff pastry", "Nutella", "sugar", "orange zest"] ,
+                "description": "These pint-sized Nutella hand pies made with puff pastry are too good to keep to yourself! Grab an order and SHARE"
+            }
+        ],
+        "drinks": [
+            {
+                "name": "apple whiskey slush",
+                "ingredients": ["3 cups crown royal regal apple", "apple cider"],
+                "description": "This is what they mean when they say you threw a cool party."
+            },
+            {
+                "name": "blackberry whisky lemonade",
+                "ingredients": ["crown royal fine de luxe", "lemon-juice", "blackberry simple syrup", "sparkling wine"] ,
+                "description": "We’ve got the ingredients for summer: fresh berries, lemonade, and Crown Royal Deluxe. Easy enough."
+            }
+        ]
+    }
+}
