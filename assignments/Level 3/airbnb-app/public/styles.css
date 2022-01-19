@@ -92,8 +92,6 @@
     width: 320px;
 }
 
-.content-container {
-}
 
 .content-container > img {
     height: 235px;
@@ -127,7 +125,7 @@
 
 }
 
-.country > span {
+.location > span {
     margin-left: 2px;
 }
 
@@ -145,4 +143,28 @@
 
 .price {
     margin-top: 8px;
+}
+
+.cards-list {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 20px;
+    overflow-x: auto;
+}
+
+.content-container {
+    position: relative;
+
+}
+
+.card-badge {
+    position: absolute;
+    top: 60px;
+    left: 46px;
+    background-color: white;
+    padding: 5px 7px;
+    border-radius: 2px;
+    font-weight: bold;
+    width: 30%;
+    font-size: 12px;
 }

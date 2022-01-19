@@ -1,0 +1,70 @@
+* {
+    margin: 0;
+}
+
+body {
+    box-sizing: border-box;
+}
+
+.header-container {
+    background: linear-gradient(90deg, #672280 1.18%, #A626D3 100%);
+    height: 65px;
+    width:100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.troll-face {
+    height:26px;
+    width: 31px;
+    margin-left: 20px;
+    margin-right: 7px;
+}
+
+.header-main {
+    display: flex;
+}
+
+.header {
+    font-family: 'Karla', sans-serif;
+    color: white;
+    font-size: 21px;
+    letter-spacing: -1px;
+}
+
+.header-container > p {
+    font-family: 'Inter', sans-serif;
+    color: white;
+    font-weight: 500;
+    font-size: 12px;
+    margin-right: 37px;
+}
+
+.form {
+    display: grid;
+    grid-template: 40px 40px / 1fr 1fr;
+    gap: 17px;
+    padding: 36px;
+}
+
+.form--input {
+    font-family: 'Karla', sans-serif;
+    border-radius: 5px;
+    border: 1px solid #D5D4D8;
+    text-indent: 5px;
+}
+
+.form--button {
+    background: linear-gradient(90deg, #672280 1.18%, #A626D3 100%);
+    grid-column: 1/-1;
+    font-family: 'Karla', sans-serif;
+    border-radius: 5px;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+
+}
+
+

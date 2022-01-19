@@ -1,18 +1,24 @@
 import React from "react"
-// import contentPic from "../katie-zaferes.png"
 import star from "../star.png"
 
 export default function Content(props) {
-    return (
+let badgeText
+if(props.openSpots === 0) {
+    badgeText = "SOLD OUT"
+} else if (props.location === "Online") {
+    badgeText = "ONLINE"
+}
 
+    return (
         <>
             <div className = "content-container">
-                <img src = {`../${props.img}`}/>
+                {badgeText && <div className = "card-badge">{badgeText}</div>}
+                <img src = {`../${props.coverImg}`}/>
                 <div className = "rating-container">
                     <img src = {star} />
-                    <p className = "rating">{props.rating}</p>
-                    <p>({props.reviewCount}) •</p>
-                    <p className = "country"><span>{props.country}</span></p>
+                    <p className = "rating">{props.stats.rating}</p>
+                    <p>({props.stats.reviewCount}) •</p>
+                    <p className = "location"><span>{props.location}</span></p>
                 </div>
                 <div className = "content-title">
                     <p>{props.title}</p>
