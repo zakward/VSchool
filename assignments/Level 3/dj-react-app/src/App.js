@@ -58,7 +58,7 @@ function bigTimeDJ4() {
     return [prevColors[0], prevColors[1], prevColors[2], "green"]
   })
 }
-
+ 
   return (
     <>
       <div className = "header">DJ REACT</div>
