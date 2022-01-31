@@ -1,13 +1,23 @@
 import React, {useState, useEffect} from"react"
+import MemeListItem from "./MemeListItem"
 
 export default function Meme() {
-    const [meme, setMeme] = useState({
+    const defaultMeme = {
         topText: "",
         bottomText: "",
-        randomImage: "http://i.imgflip.com/1bij.jpg" //default image/meme
-    }) 
+        randomImage: "http://i.imgflip.com/1bij.jpg", //default image/meme
+    }
+    const [meme, setMeme] = useState(defaultMeme)
 
-    const [allMemes, setAllMemes] = useState([ ])
+
+    const [allMemes, setAllMemes] = useState([])
+
+    const [memesList, setMemesList] = useState([])
+
+
+    const memesListElements = memesList.map((meme, index) => {
+        return <MemeListItem key = {index} {...meme}/>
+    })
 
     useEffect( () => {
         fetch("https://api.imgflip.com/get_memes")
@@ -27,10 +37,23 @@ export default function Meme() {
 
 function handleChange(event) {
     const {name, value} = event.target
+    console.log(meme)
     setMeme(prevMeme => ({
                 ...prevMeme,
                 [name] : value
     }))
+}
+
+function handleSave() {
+    setMemesList(prevMemesList => {
+        return [ ...prevMemesList,
+                {
+                    topText: meme.topText,
+                    bottomText: meme.bottomText,
+                    randomImage: meme.randomImage
+                }]
+    }) 
+    setMeme(defaultMeme)
 }
 
     return (
@@ -61,7 +84,20 @@ function handleChange(event) {
                 <img src = {meme.randomImage} className = "meme-img"/>
                 <h2 className="meme--text top">{meme.topText}</h2>
                 <h2 className="meme--text bottom">{meme.bottomText}</h2>
+                
             </div>
+
+            <button className = "save-btn"
+                           onClick = {handleSave} 
+                            >SAVE MEME</button>
+
+            <div className = "saved-memes-container">
+                <h2 className = "saved-memes-header">SAVED MEMES</h2>
+                <ul>
+                    {memesListElements}
+                </ul>
+            </div>
+       
         </>
     )
 }

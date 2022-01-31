@@ -112,3 +112,68 @@ body {
 .top {
     top: 0;
 }
+
+.save-btn {
+    background: linear-gradient(90deg, #672280 1.18%, #A626D3 100%);
+    font-family: 'Karla', sans-serif;
+    border-radius: 5px;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    width: 95%;
+    margin: 10px 0px 20px 40px;
+    height: 40px;
+}
+
+.saved-memes-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.saved-memes-header {
+    font-family: 'Karla', sans-serif;
+    color: #672280;
+    margin-left: 83px;
+    margin-bottom: 20px;
+    font-size: 46px;
+}
+
+.list-item-container {
+        width: 100%;
+        height: auto;
+        display: flex;
+        justify-content: flex-start;
+        position: relative;
+        margin-bottom: 20px;
+}
+
+.list-item-img{
+    height: 250px;
+    width: 400px;
+}
+
+.list-item-text {
+    position: absolute;
+    width: 80%;
+    text-align: center;
+    left: 10%;
+    transform: translateX(-50%);
+    margin: 15px 0;
+    padding: 0 5px;
+    font-family: impact, sans-serif;
+    font-size: 2em;
+    text-transform: uppercase;
+    color: white;
+    letter-spacing: 1px;
+    text-shadow:
+        2px 2px 0 #000,
+        -2px -2px 0 #000,
+        2px -2px 0 #000,
+        -2px 2px 0 #000,
+        0 2px 0 #000,
+        2px 0 0 #000,
+        0 -2px 0 #000,
+        -2px 0 0 #000,
+        2px 2px 5px #000;
+}
