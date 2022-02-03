@@ -1,0 +1,48 @@
+* {
+    margin: 0;
+}
+
+body {
+    box-sizing: border-box;
+}
+
+.thing-container {
+    margin: 100px;
+    text-align: center;
+}
+
+.thing-title {
+    font-size: 46px;
+}
+
+.thing-description {
+    font-size: 38px;
+}
+
+.thing-img {
+    height: 350px;
+    width: 700px;
+    object-fit: cover;
+    object-position: 50% 50%;
+}
+
+.thing-btn {
+    height: 50px;
+    width: 200px;
+    font-size: 25px;
+    margin: 25px;
+}
+
+.thing-edit {
+    background-color: rgb(218, 206, 206);
+    border: 1px solid black;
+    color: white;
+    display: block;
+    position: relative;
+    margin-top: 20px;
+    height: 50px;
+    width: 400px;
+    left: 39%;
+    text-align: center;
+    font-size: 25px;
+}

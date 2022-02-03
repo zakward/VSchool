@@ -1,0 +1,38 @@
+* {
+    margin: 0;
+}
+
+body {
+    box-sizing: border-box;
+}
+
+.form {
+    background-color: aqua;
+}
+
+li {
+    list-style: none;
+}
+
+.form-input {
+    height: 25px;
+    width: 400px;
+    margin-top: 50px;
+}
+
+.submit-btn {
+    height: 25px;
+    width: 100px;
+    margin-top: 50px;
+    left: 50%;
+    position: relative;
+    margin-bottom: 50px;
+}
+
+.form-container {
+    display: flex;
+    justify-content: center;
+    gap: 100px;
+    
+
+}
