@@ -4,13 +4,15 @@ import "./Thing.css"
 
 function Thing(props) {
     const {handleDelete, handleEditChange, edits, setEdits, handleEditSave, isEditing, setIsEditing} = React.useContext(ListContext)
-    // WHEN IS EDITS AND IS EDITING LIVES IN THING ONLY THE CURRENT THING IS EDITED but WHEN ITS IN CONTEXT ALL THINGS EDIT
-    // const [isEditing, setIsEditing] = React.useState(false)
-    // function toggleEdit() {
-    //     setIsEditing(!isEditing)
-    // }
-
-    console.log(isEditing)
+   
+    function editItem() {
+        setIsEditing(isEditing === props._id ? -1 : props._id)
+        setEdits({
+            title: props.title,
+            imgUrl: props.imgUrl,
+            description: props.description
+        })
+    }
     return (
         <>
             <div className = "thing-container">
@@ -18,12 +20,10 @@ function Thing(props) {
                 {isEditing === props._id ? <input value = {edits.imgUrl} onChange = {handleEditChange} name = "imgUrl" className = "thing-edit" placeholder="New Img URL"/> : <img className = "thing-img" src = {props.imgUrl}/>}
                 {isEditing === props._id ? <input value = {edits.description} onChange = {handleEditChange} name = "description" className = "thing-edit" placeholder="New Description"/> : <h2 className = "thing-description">DESCRIPTION: {props.description}</h2>}
                 <button className = "thing-btn" onClick = {props.onDelete}>DELETE</button>
-                {isEditing === props._id ? <button className = "thing-btn" onClick = {props.onEdit}>SAVE</button> : <button className = "thing-btn" onClick = {() => setIsEditing(isEditing === props._id ? -1 : props._id)}>EDIT</button>}
+                {isEditing === props._id ? <button className = "thing-btn" onClick = {props.onSave}>SAVE</button> : <button className = "thing-btn" onClick = {editItem}>EDIT</button>}
             </div>
         </>
     )
 }
-
-
 
 export default Thing

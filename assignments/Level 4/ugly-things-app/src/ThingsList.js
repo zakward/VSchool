@@ -9,7 +9,7 @@ function ThingsList() {
 const {thingsArray, handleDelete, handleEditSave} = React.useContext(ListContext)
 
 const thingsListElement = thingsArray.map((thing, index) => {
-    return <Thing key = {thing._id} {...thing} index = {index} onEdit ={ ()=> handleEditSave(index)} onDelete= { () => handleDelete(index) } />
+    return <Thing key = {thing._id} {...thing} index = {index} onSave ={ ()=> handleEditSave(index)} onDelete= { () => handleDelete(index) } />
 })
     return(
         <>

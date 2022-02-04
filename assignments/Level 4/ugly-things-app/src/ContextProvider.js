@@ -70,24 +70,18 @@ function ContextProvider(props) {
 
     function handleEditSave(index) {
         thingsArray.map(thing => {
-            if(thing._id === thingsArray[index]._id) {
                 setIsEditing(-1)
                 console.log(thing._id)
                 console.log(thingsArray[index]._id)
                 console.log(edits)
-            } else {   
-                return thing
-            }
+                axios.put("https://api.vschool.io/zakward/thing/" + thingsArray[index]._id, edits)
+                    .then(res => setThingsArray(prevThingsArray => {
+                        return prevThingsArray.map(thing => {
+                            return thing._id === thingsArray[index]._id ? edits : thing
+                        })
+                    }))
+                    .catch(err => console.log(err))
         } )
-        
-        // POTENTIAL PUT REQUEST Work in Progress
-        // axios.put("https://api.vschool.io/zakward/thing/" + thingsArray[index]._id, edits)
-        //     .then(res =>setThingsArray(prevMemesArray => {
-        //     return prevMemesArray.map(thing => {
-        //         return thing._id === thingsArray[index].id ? edits : thing
-        //     })
-        // }))
-            // .catch(err => console.log(err))
     }
   
 

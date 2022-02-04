@@ -4,6 +4,6 @@ QUESTIONS/THOUGHTS
 
 2)  Current issues are:
 
-        a) getting the Thing component to get the values from each thing within the thingsArray
+        a) how to set it up when SAVE is clicked it re renders the page with updated array automatically
 
-        b) getting the Thing component to render on SUBMIT
+        b) also how to prefill the values of the inputs in to the edit field

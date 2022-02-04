@@ -1,0 +1,12 @@
+* {
+    margin: 0;
+}
+
+body {
+    box-sizing: border-box;
+}
+
+.home-header {
+    text-align: center;
+    margin-top: 100px;
+}
