@@ -1,0 +1,52 @@
+* {
+    margin: 0;
+}
+
+body {
+    box-sizing: border-box;
+    background-color: rgb(224, 216, 216);
+}
+
+.random-container {
+    display: flex;
+    flex-direction: column;
+   align-items: center;
+    margin-top: 70px;
+}
+
+.detail-link {
+    text-decoration: none;
+}
+
+.random-title {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 5em;
+    font-family: 'Lora', serif;
+    color: rgb(6, 51, 6);
+}
+
+.random-name {
+    font-family: 'Lora', serif;
+    color: rgb(6, 51, 6);
+    font-size: 45px;
+}
+
+.random-img {
+    width: 500px;
+    height: 500px;
+    text-align: center;
+    margin-top: 10px;
+    border-radius: 7px;
+}
+
+.generate-btn {
+    margin-top: 20px;
+    height: 75px;
+    width: 200px;
+    background-image: linear-gradient(rgb(6, 51, 6), green);
+    color: white;
+    font-family: 'Lora', serif;
+    font-size: 20px;
+    cursor: pointer;
+}

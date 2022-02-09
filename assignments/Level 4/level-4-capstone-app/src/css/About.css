@@ -1,0 +1,79 @@
+* {
+    margin: 0;
+    /* outline: 1px solid red; */
+}
+
+body {
+    box-sizing: border-box;
+    background-color: rgb(224, 216, 216);
+}
+
+.about-header-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows:  repeat(2, 150px);
+    margin: 50px;
+}
+
+.about-img {
+    width: 60%;
+    height: auto;
+    border: 1px solid rgb(6, 51, 6);
+    border-radius: 50%;
+    grid-column: 1/2;
+    grid-row: 1/-1;
+    margin-left: 15%;
+}
+
+.about-title {
+    font-family: 'Lora', serif;
+    font-size: 65px;
+    grid-column: 2/4;
+    grid-row: 1/2;
+    margin-top: 25px;
+    color:  rgb(6, 51, 6);
+}
+
+.about-description {
+    font-family: 'Lora', serif;
+    font-size: 25px;
+    grid-column: 2/4;
+    margin-right: 25%;
+}
+
+.line-break {
+    border-top: 2px solid rgb(6, 51, 6);
+    grid-column: 2/4;
+    margin-right: 25%;
+    margin-top: 25px;
+}
+
+
+.functions-title {
+    font-family: 'Lora', serif;
+    font-size: 65px;
+    font-weight: 700;
+    text-align: center;
+    margin-top: 100px;
+    margin-bottom: 50px;
+    color: rgb(6, 51, 6);
+}
+
+.functions-container {
+    text-align: center;
+}
+
+.functions-container > h3 {
+    font-family: 'Lora', serif;
+    font-weight: 700;
+    color: rgb(6, 51, 6);
+    font-size: 35px;
+    margin-bottom: 25px;
+}
+
+.functions-container > p {
+    font-family: 'Lora', serif;
+    font-weight: 700;
+    font-size: 25px;
+    margin-bottom: 10px;
+}
