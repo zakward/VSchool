@@ -16,10 +16,10 @@ function RandomDrink() {
 
     function getRandomCocktail() {
         axios.get("https://www.thecocktaildb.com/api/json/v1/1/random.php")
-        .then(res => setRandomCocktail( {
-            strDrink : res.data.drinks[0].strDrink,
-            strDrinkThumb:  res.data.drinks[0].strDrinkThumb,
-            idDrink: res.data.drinks[0].idDrink
+             .then(res => setRandomCocktail( {
+                strDrink : res.data.drinks[0].strDrink,
+                strDrinkThumb:  res.data.drinks[0].strDrinkThumb,
+                idDrink: res.data.drinks[0].idDrink
         }))    
             .catch(err => console.log(err))
     }
@@ -32,7 +32,7 @@ function RandomDrink() {
             <div className = "random-container">
                 <Link className = "detail-link" to = {`/drinkDetail/${randomCocktail.idDrink}`}><h3 className = "random-name">"{randomCocktail.strDrink}"</h3></Link>
                 <Link to = {`/drinkDetail/${randomCocktail.idDrink}`}><img className = "random-img" src = {randomCocktail.strDrinkThumb} /></Link>
-                <button onClick = {getRandomCocktail} type="button" className="generate-btn">Generate New Cocktail</button>
+                <button onClick = {getRandomCocktail} type="button" className="generate-btn">GENERATE NEW COCKTAIL</button>
             </div>
 
             

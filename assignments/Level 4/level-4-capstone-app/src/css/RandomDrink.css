@@ -43,10 +43,12 @@ body {
 .generate-btn {
     margin-top: 20px;
     height: 75px;
-    width: 200px;
+    width: 400px;
     background-image: linear-gradient(rgb(6, 51, 6), green);
     color: white;
     font-family: 'Lora', serif;
-    font-size: 20px;
+    font-size: 25px;
     cursor: pointer;
+    letter-spacing: 2px;
+    font-weight: 800;
 }
