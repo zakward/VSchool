@@ -1,10 +1,11 @@
 import React from "react"
-import {Link, useParams} from "react-router-dom"
+import {Link, useParams, useNavigate} from "react-router-dom"
 import axios from "axios"
 import "../css/DrinkDetail.css"
 
 function DrinkDetail() {
 const {drinkId} = useParams()
+const navigate = useNavigate()
 
 const [cocktailDetail, setCocktailDetail] = React.useState({
     strDrink: "",
@@ -76,6 +77,7 @@ const [cocktailDetail, setCocktailDetail] = React.useState({
                     )
                 })}</h3>
                 <h3 className = "detail instructions "><b>Instructions:</b> {cocktailDetail.strInstructions}</h3>
+                <button className = "back-btn" onClick = {()=> navigate(-1)}>BACK</button>
             </div>
             </div>
           

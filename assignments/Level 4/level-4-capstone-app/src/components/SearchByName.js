@@ -12,17 +12,40 @@ function SearchByName() {
         ingredient: ""
     })
 
+    const [errMessage, setErrMessage] = useState(null)
+
     function getSearchedDrinkByName() {
         axios.get(`https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${searchedDrink.strDrink}`)
-            .then(res => setDrinksArr(res.data.drinks))
-            // .catch(err =>  <h1>It looks nothing matches your search!</h1>) // render an error message
+            .then(res => {
+                if (res.data.drinks === null) {
+                    setDrinksArr([])
+                    setErrMessage("I'm sorry!!  No results were found!!")
+                } else {
+                    sessionStorage.setItem("drinks", JSON.stringify(res.data.drinks))
+                setDrinksArr(res.data.drinks)
+                }
+            })
             .catch(err => console.log(err))
+
+            setSearchedDrink({
+                strDrink: "",
+                strDrinkThumb: "",
+                idDrink: "",
+                ingredient: ""
+            })
     }
 
     function getSearchedDrinkByIngredient() {
         axios.get(`https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=${searchedDrink.ingredient}`)
-            .then(res =>setDrinksArr(res.data.drinks) )
+            .then(res => {setDrinksArr(res.data.drinks)})
             .catch(err => console.log(err))
+
+            setSearchedDrink({
+                strDrink: "",
+                strDrinkThumb: "",
+                idDrink: "",
+                ingredient: ""
+            })
     }
 
     function handleChange(event){
@@ -31,7 +54,7 @@ function SearchByName() {
     }
 
 
-    const [drinksArr, setDrinksArr] = useState([])
+    const [drinksArr, setDrinksArr] = useState(JSON.parse(sessionStorage.getItem("drinks")) || [ ] )
     const drinkElement = drinksArr.map(drink => {
         return (
             <>
@@ -49,7 +72,7 @@ function SearchByName() {
                 <h1 className= "search-title">SEARCH BY COCKTAIL NAME</h1>
                 <input  className = "search-input" placeholder = "Cocktail Name" onChange = {handleChange} type="text" name ="strDrink" value = {searchedDrink.strDrink}/>
                 <button className = "search-btn" type="submit" onClick = {getSearchedDrinkByName}>SEARCH</button> 
-                < hr className = "search-break" />
+                <hr className = "search-break" />
             </div> 
             <div className = "search-container">
                 <h1 className= "search-title">SEARCH BY COCKTAIL INGREDIENT</h1>
@@ -60,7 +83,7 @@ function SearchByName() {
         </div>
            
             <div className = "drinks-container">
-                {drinkElement}
+               {errMessage !== null ? <h1>{errMessage}</h1> : drinkElement}
             </div>
         </>
     )
