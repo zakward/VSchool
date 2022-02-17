@@ -17,6 +17,7 @@ function ContextProvider(props) {
     }
     const [thingsArray, setThingsArray] = useState([])
 
+    // how the things list is rendered 
     React.useEffect( ( ) =>
         axios.get("https://api.vschool.io/zakward/thing")
         // .then(res =>console.log(res.data))

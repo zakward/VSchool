@@ -37,14 +37,19 @@ bountiesRouter.route("/")
         console.log(newBounty)
         newBounty._id = uuidv4()
         bounty.push(newBounty)
-        res.send("Successfully added a new bounty!")
+        // res.send("Successfully added a new bounty!")
+        res.send(newBounty)
     })
 
 
  // Get One
-bountiesRouter.get("/:bountyId",(req, res) => {
+bountiesRouter.get("/:bountyId",(req, res, next) => {
     const bountyId = req.params.bountyId
     const foundBounty = bounty.find(bounty => bounty._id === bountyId)
+    if(!foundBounty) {
+        const error = new Error("The bounty was not found.")
+        return next(error)
+    }
     res.send(foundBounty)
 })
 
@@ -53,6 +58,10 @@ bountiesRouter.get("/search/type", (req, res) => {
    const type = req.query.type
    const filteredBounty = bounty.filter(bounty => bounty.type === type )
    res.send(filteredBounty)
+   if(!filteredBounty) {
+       const error = new Error("Make sure you have a valid type.. choose Sith or Jedi")
+       return next(error)
+   }
     // const filteredBounty = bounty.filter(bounty => bounty.type === type)
     // res.send(filteredBounty)
     // console.log(req)
@@ -63,6 +72,10 @@ bountiesRouter.get("/search/type", (req, res) => {
 bountiesRouter.delete("/:bountyId", (req, res) => {
     const bountyId = req.params.bountyId
     const bountyIndex = bounty.findIndex(bounty => bounty._id === bountyId )
+    if(!foundBounty) {
+        const error = new Error("The bountyId was not found.")
+        return next(error)
+    }
     console.log(bountyIndex)
     bounty.splice(bountyIndex, 1)
     res.send("Successfully deleted Bounty!")
