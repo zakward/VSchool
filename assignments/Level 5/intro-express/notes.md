@@ -118,3 +118,51 @@ Parts of a URL
     logger
         -npm install morgan  locally
         
+
+# Status Codes
+
+    #200 -- successful request (get requests)
+    #201 -- successful insert / successful update (post requests)
+    #401 -- Unathorized
+    #404 -- Not Found
+    #500 -- Server Error
+
+# Introduction to Mongoose
+
+    -PURPOSE
+        - create models
+        -query data
+
+    -Connect
+    npm install mongoose
+
+
+# Mongoose Schemas
+    -Blueprints for our data
+
+
+# Mongoose Models
+    -Models have a Name, and a Blueprint (Schema)
+    -Models are used to perform the CRUD operations on data created with the Model
+
+
+
+
+    const bounty = [
+    {
+        firstName: "Doc",
+        lastName: "Holiday",
+        isDead: false,
+        bountyAmount: 500,
+        type: "jedi" ,
+        _id: uuidv4()
+},
+{
+        firstName: "Hulk",
+        lastName: "Hogan",
+        isDead: true,
+        bountyAmount: 250,
+        type: "Sith" ,
+        _id: uuidv4()
+}
+]

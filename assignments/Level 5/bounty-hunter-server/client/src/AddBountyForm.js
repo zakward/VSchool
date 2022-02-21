@@ -25,7 +25,8 @@ function handleSubmit(event) {
         <form onSubmit = {handleSubmit}>
             <input type = "text" name = "firstName" value = {inputs.firstName} onChange = {handleChange} placeholder= "First Name" />
             <input type = "text" name = "lastName" value = {inputs.lastName} onChange = {handleChange} placeholder= "Last Name" />
-            <input type = "text" name = "isDead" value = {inputs.isDead} onChange = {handleChange} placeholder= "Is the Bounty Dead!?" />
+            <input type = "text" name = "isDead" value = {inputs.isDead} onChange = {handleChange} placeholder= "Bounty Dead!? Yes or No" />
+            <input type = "text" name = "type" value = {inputs.type} onChange = {handleChange} placeholder = "Sith, Jedi, or Ninja"/>
             <input type = "text" name = "bountyAmount" value = {inputs.bountyAmount} onChange = {handleChange} placeholder= "Bounty Amount?" />
             <button>{props.btnText}</button>
         </form>

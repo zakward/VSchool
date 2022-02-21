@@ -55,3 +55,13 @@ button {
     background-color: cornflowerblue;
     color: whitesmoke;
 }
+
+h4 {
+    margin-top: 50px;
+}
+
+.filter-form {
+    width: 20%;
+    height: 25px;
+    margin-bottom: 50px;
+}

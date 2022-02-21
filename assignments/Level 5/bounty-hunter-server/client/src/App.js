@@ -35,6 +35,15 @@ function App() {
             .catch(err => console.log(err))
     }
     
+    function handleFilter(e) {
+        if(e.target.value === "reset") {
+            getBounty()
+        } else {
+               axios.get(`/bounty/search/type?type=${e.target.value}`)
+            .then(res => setBounty(res.data))
+            .catch(err => console.log(err))
+        }
+    }
 
     useEffect( () => {
       getBounty()
@@ -43,7 +52,16 @@ function App() {
     return (
         <>
         <div className = "bounty-container">
-            <AddBountyForm  submit = {addBounty} btnText = "Add Movie"/>
+            <AddBountyForm  submit = {addBounty} btnText = "Add Bounty!"/>
+
+            <h4>Filter By Type</h4>
+            <select onChange = {handleFilter} className = "filter-form">
+                <option value ="reset">All Bounties</option>
+                <option value ="jedi">Jedi</option>
+                <option value = "sith">Sith</option>
+                <option value = "ninja">Ninja</option>
+            </select>
+
             { bounty.map(bounty => <Bounty {...bounty} editBounty = {editBounty} deleteBounty = {deleteBounty} key = {bounty.firstName} />)}
         </div>
         </>
