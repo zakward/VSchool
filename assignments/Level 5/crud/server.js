@@ -12,6 +12,7 @@ mongoose.connect("mongodb+srv://zakward_bounty:AddyGrace18@cluster0.0cgyy.mongod
 () => console.log("Connected to the inventory database")
 )
 
+
 //Routes
 app.use("/inventory", require("./routes/inventoryRoutes.js"))
 

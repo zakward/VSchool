@@ -145,24 +145,64 @@ Parts of a URL
     -Models have a Name, and a Blueprint (Schema)
     -Models are used to perform the CRUD operations on data created with the Model
 
+Mongoose MongoDB Methods
+
+$inc
+    - increment
+    - increment properties from the scheme
+    - ex.. likes by book
+
+$regex
+    - regular expression
+    -search by a specific expression
+
+$pull
+    -updates
+$push
+    -updates
+
+$where
+    -in depth and specific search
 
 
+$exec    
 
-    const bounty = [
-    {
-        firstName: "Doc",
-        lastName: "Holiday",
-        isDead: false,
-        bountyAmount: 500,
-        type: "jedi" ,
-        _id: uuidv4()
-},
-{
-        firstName: "Hulk",
-        lastName: "Hogan",
-        isDead: true,
-        bountyAmount: 250,
-        type: "Sith" ,
-        _id: uuidv4()
-}
-]
+where("likes).gte(5).exec(err, books)
+
+
+# Git Collaboration
+
+# Start the Repo, clone master
+
+# Start the Repo, Clone Master
+
+1) Create git repository on github
+2) Connect/Clone locally
+3) Set up the code base   -get add --all, git commit -m, and git push ( all from master or main) - only time to push to main
+
+4) Clone the Repository
+    -clone or copy to your termain
+    - git clone <pasted command from github>
+
+5) Create a feature branch
+    -git branch <branchname>
+6) Checkout to that branch
+-git checkout <branchname>
+7) Commit and push branch to github
+    --get add --all, git commit -m, and git push 
+8) locally run git checkout master
+9) pull down remote master
+    -git pull
+10) checkout back to local branch
+    -git checkout <branchname>
+
+11) merge local master into local branch
+    - git merge --no-ff master
+    -if goes well
+        -shift + ZZ
+    -if it goes badly
+        -resolve conflicts locally
+12) push branch to github
+    ---get add --all, git commit -m, and git push 
+ 13) create pull request on github
+ 
