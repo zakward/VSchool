@@ -3,9 +3,9 @@ import React from "react"
 function Public() {
     return (
         <>
-            <h1>
-                TEST
-            </h1>
+            <div className = "public">
+                <h1>This is the PUBLIC page!</h1>
+            </div>
         </>
     )
 }

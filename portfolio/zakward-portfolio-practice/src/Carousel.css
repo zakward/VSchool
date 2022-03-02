@@ -1,0 +1,134 @@
+* {
+    margin: 0;
+    /* outline: 1px solid red; */
+}
+
+body {
+    box-sizing: border-box;
+}
+
+.project-header {
+    color: #98a6ad;
+    text-align: center;
+    font-family: 'Karla', sans-serif;
+    margin-bottom: 25px;
+    font-size: 45px;
+    margin-top: 10px;
+}
+
+.carousel {
+    width: 52%;
+    height: 400px;
+    /* background-color: #272935; */
+    margin-bottom: 50px;
+}
+
+.carouselInner {
+    height: 100%;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 90%;
+    display: flex;
+}
+
+.carouselInner .left {
+    flex: 5%;
+    height: 100%;
+    background-color: rgb(41, 43, 56, 0.75);
+    display: grid;
+    place-items: center;
+}
+
+.carouselInner .right {
+    flex: 5%;
+    height: 100%;
+    background-color: rgb(41, 43, 56, 0.75);
+    display: grid;
+    place-items: center;
+}
+
+.carouselInner .center {
+    flex: 90%;
+    height: 100%;
+}
+
+.back-arrow {
+    width: 50px;
+    height: 50px;
+    background-image: url("./backArrow.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    filter: invert(33%) sepia(49%) saturate(378%) hue-rotate(330deg) brightness(90%) contrast(82%);
+    cursor: pointer;
+}
+
+.forward-arrow {
+    width: 50px;
+    height: 50px;
+    background-image: url("./forwardArrow.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    filter: invert(33%) sepia(49%) saturate(378%) hue-rotate(330deg) brightness(90%) contrast(82%);
+    cursor: pointer;
+}
+
+.project-details {
+    display: flex;
+    position: relative;
+    left: 100%;
+    bottom: 125%;
+    margin-left: 120px;
+    color: #f8f8f2;
+    font-family: 'Karla', sans-serif;
+    gap: 15px;
+}
+
+.project-title {
+    color: #795548;
+    font-size: 50px;
+}
+
+.project-details > h2 {
+    font-size: 15px;
+    color: #f8f8f2;
+    width: 65%;
+} 
+
+.project-details > h3 {
+    margin-top: 25px;
+    color: #98a6ad;
+}
+
+.github-btn-container {
+    border: 1px solid #795548;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    width: 10%;
+    }
+
+.github-logo {
+    background-image: url("./16-github.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 25px;
+    width: 50px;
+    filter: invert(33%) sepia(49%) saturate(378%) hue-rotate(330deg) brightness(90%) contrast(82%);
+
+}
+
+.code-btn {
+    width: 50px;
+    /* margin-top: 10px; */
+    background-color: #272935;
+    color: #795548;
+    padding: 5px;
+    text-align: center;
+    border-radius: 10px;
+    text-decoration: none;
+    line-height: 1;
+    font-size: 10px;
+    /* border: 1px solid  #795548; */
+}

@@ -1,0 +1,275 @@
+* {
+    margin: 0;
+    /* outline: 1px solid red; */
+}
+
+body {
+    box-sizing: border-box;
+}
+
+/* Navbar Section */
+
+.navbar-container {
+    height: 75px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    background-color: #f8f8f2;
+    z-index: 1;
+}
+
+.nav-title {
+    font-family: 'Karla', sans-serif;
+    font-size: 30px;
+    margin-left: 100px;
+}
+
+.links-container {
+    font-family: 'Karla', sans-serif;
+    font-size: 15px;
+    margin-right: 100px;
+}
+
+.link {
+    margin-right: 15px;
+    text-decoration: none;
+    color: black;
+}
+
+/* Biography Section */
+
+.bio-wrapper {
+    height: 100vh;
+    background-image: linear-gradient(180deg, #272935, #323442) ;
+    display: grid;
+    grid-template-columns: 40% 59%;
+    grid-template-rows: repeat(2, 67%);
+
+}
+
+.profile-wrapper {
+    font-family: 'Karla', sans-serif;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    padding-top: 150px;
+    gap: 20px;
+    color: #f8f8f2;
+    margin-left: 5%;
+    margin-top: 100px;
+}
+
+.profile-img {
+    height: auto;
+    width: 400px;
+    border-radius: 50%;
+}
+
+.profile-name {
+    font-size: 36px;
+}
+
+.profile-description {
+    color: #98a6ad;
+}
+
+.icon-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.icon {
+    height: 75px;
+    width: 75px;
+    background-repeat: no-repeat;
+    background-position: center;
+    filter: invert(33%) sepia(49%) saturate(378%) hue-rotate(330deg) brightness(90%) contrast(82%);
+}
+
+.email {
+    background-image: url("./391-mail4.png");
+}
+
+.github {
+    background-image: url("./433-github.png");
+}
+
+.linkedIn {
+    background-image: url("./458-linkedin.png");
+}
+
+.biography-container {
+    font-family: 'Karla', sans-serif;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding-top: 150px;
+    gap: 20px;
+    color: #98a6ad;
+}
+
+.biography-title {
+    font-size: 45px;
+    color: #98a6ad;
+}
+
+.biography {
+    color: #f8f8f2;
+    font-size: 1rem;
+    line-height: 2;
+    width: 75%;
+}
+
+.skills-container {
+    grid-column: 2/-1;
+    display: flex;
+    flex-direction: row;
+    width: 75%;
+    align-items: flex-start;
+    font-family: 'Karla', sans-serif;
+    gap: 150px;
+}
+
+.skills-title {
+    color: #98a6ad;
+    font-size: 25px;
+}
+
+
+.skills-list > li {
+    margin-top:10px;
+    color: #f8f8f2;
+}
+
+/* Project  */
+
+.project-wrapper {
+    background-color: #272935;
+    display: grid;
+    grid-template-columns: 40% 35% 20%;
+}
+
+.projects-header {
+   grid-column: 1/2;
+    text-align: center;
+    margin-top: 100px;
+    color: #98a6ad;
+    font-size: 45px;
+    font-family: 'Karla', sans-serif;
+}
+
+.project-img {
+    width: 250px;
+    height: auto;
+    grid-column: 3/4;
+    margin-top: 100px;
+}
+
+.project-details {
+    display: flex;
+    flex-direction: column;
+    grid-column: 2/3;
+    margin-top: 100px;
+    gap: 5px;
+    width: 75%;
+    color: #f8f8f2;
+    font-family: 'Karla', sans-serif;
+}
+
+/* .github-btn-container {
+     border: 1px solid #795548;
+     border-radius: 10px;
+}
+
+.github-logo {
+    background-image: url("./32-github.png");
+    background-repeat: no-repeat;
+    height: 50px;
+    width: 50px;
+    
+}
+
+.code-btn {
+    width: 50px;
+    margin-top: 10px;
+    background-color: #272935;
+    color: #795548;
+    padding: 5px;
+    text-align: center;
+    text-decoration: none;
+} */
+
+.name {
+    margin-top: 25px;
+    color: #98a6ad;
+}
+
+.project-description {
+    font-weight: 100;
+    font-size: 14px;
+}
+
+.line-break {
+    grid-column: 2/-1;
+    color: #98a6ad;
+    height: 2px;
+    background-color: #98a6ad;
+    margin-top: 45px;
+    width: 90%;
+    margin-bottom: 25px;
+}
+
+/* Footer section */
+
+.footer-wrapper {
+    height: 100px;
+    width: 100%;
+    background-color:  #323442;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    color: #98a6ad;
+    font-size: 18px;
+}
+
+
+.top-link {
+    text-decoration: none;
+    width: 100px;
+    height: 100px;
+    background-image: url("./315-arrow-up2.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    filter: invert(33%) sepia(49%) saturate(378%) hue-rotate(330deg) brightness(90%) contrast(82%);
+    opacity: .75;
+    position: relative;
+    left: 20em;
+}
+
+/* Carousel */
+
+.project-carousel-container {
+    background-color: #272935;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: center;
+    height: 525px;
+    padding-bottom: 50px;
+    padding-left: 50px;
+}
+
+
+
+
