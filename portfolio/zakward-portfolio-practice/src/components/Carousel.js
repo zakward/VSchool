@@ -45,13 +45,11 @@ function Carousel() {
                 <h1 className = "project-title">{ProjectData[currProject].title}</h1>
                 <h2>{ProjectData[currProject].description}</h2>
                 <h3>Zak Ward</h3>
-                <div className = "github-btn-container">
+                   <div className = "github-btn-container">
                     <div className = "github-logo"></div>
-                    {/* <a href = "mailto: zakward85@gmail.com"><div className = "icon email"></div></a> */}
-                    <a href = {ProjectData[currProject].codeLink} className = "code-btn">Code</a>
+                    <a href = {ProjectData[currProject].codeLink} className = "code-btn">View Code</a>
                 </div>
             </div>
-            
           </div>
       </>
 
@@ -59,3 +57,6 @@ function Carousel() {
 }
 
 export default Carousel
+
+
+      

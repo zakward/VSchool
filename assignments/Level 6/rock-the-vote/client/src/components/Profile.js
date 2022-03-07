@@ -6,14 +6,14 @@ import { UserContext } from "../context/UserProvider"
 
 function Profile() {
 
-    const { user: { username } } = useContext(UserContext)
+    const { user: { username}, addPost } = useContext(UserContext)
 
     return (
         <>
             <div className = "profile">
                 <h1>Welcome @{username}!</h1>
                 <h3>Add a Post</h3>
-                <PostForm />
+                <PostForm addPost = {addPost} />
                 <h3>Your Posts</h3>
             </div>
         </>

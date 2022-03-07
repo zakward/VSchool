@@ -20,6 +20,178 @@ npm install jsonwebtoken
 4) Start a mongodb instance in terminal
 sudo mongod --dbpath ~/data/db
 
-5) Create a .env file and add SECRET
+5)  // 	$npm install dotenv
+ 	Create a .env file and add SECRET   
+	SECRET = "unicorn tomato cloudy high"
 
 6) Start on Models and Routes
+
+declarations/imports
+const expressJwt = require("express-jwt")
+require("dotenv").config()
+
+
+middleware 
+app.use("/api", expressJwt( { secret: process.env.SECRET } ) )
+
+errorHandling
+app.use(err, req, res, next) => {
+	console.log(err)
+	if (err.name === "UnauthorizedError") {
+		res.status(err.status)
+}
+
+	return res.send( {errMsg: err.message) )
+})
+
+
+SERVER SIDE
+
+//SIGN UP Route
+authRouter.post("/signup", (req, res, next) => {
+    User.findOne({ username: req.body.username.toLowerCase() }, (err, user) => {
+        if (err) {
+            res.status(500)
+            return next(err)
+        }
+        if (user) {
+            res.status(403)
+            return next(new Error("That username is already taken"))
+        }
+        const newUser = new User(req.body)
+        newUser.save((err, savedUser) => {
+            if(err) {
+                res.status(500)
+                return next(err)
+            }
+            const token = jwt.sign(savedUser.toObject(), process.env.SECRET)
+            return res.status(201).send({token, user: savedUser})
+        })
+    })
+})
+
+//LOGIN ROUTE
+authRouter.post("/login", (req, res, next) => {
+    User.findOne({ username: req.body.username.toLowerCase() }, (err, user) => {
+        if (err) {
+            res.status(500)
+            return next(err)
+        }
+        if (!user) {
+            res.status(403) //forbidden
+            return next(new Error("Username or password are incorrect"))
+        }
+        if (req.body.password !== user.password) {
+            res.status(403)
+            return next(new Error("Username or password are incorrect"))
+        }
+        const token = jwt.sign(user.toObject(), process.env.SECRET)
+        return res.status(200).send({ token, user })
+    })
+})
+
+7) make sure you add a User reference in the "Issue Model"
+	user: {
+		type: Schema.Types.ObjectId,
+		ref: "User",
+		required: true
+		}
+
+8) add code to post a new Issue that assigns the req.body.user to req.user._id 
+	req.body.user = req.user._id
+
+
+CLIENT SIDE
+set up sign up:
+
+	1) UserProvider.js
+
+		 function signup(credentials) {
+        axios.post("/auth/signup", credentials)
+            .then(res => {
+                const { user, token } = res.data
+                localStorage.setItem("token", token)
+                localStorage.setItem("user", JSON.stringify(user))
+                setUserState(prevUserState => ({
+                    ...prevUserState,
+                    user,
+                    token
+                }))
+            })
+            .catch(err => console.log(err.response.data.message))
+    }
+
+	
+	return (
+        <UserContext.Provider
+            value = { { 
+                ...userState,
+                signup
+            }
+        }
+        >
+            { props.children }
+        </UserContext.Provider>
+    )
+
+
+	2) Pass signup function via context to Auth.js
+		
+		  function handleSignup(e) {
+        e.preventDefault()
+        signup(inputs)
+    }
+
+	return (
+		<AuthForm 
+                            handleChange = {handleChange}
+                            handleSubmit = {handleSignup}
+                            inputs = {inputs}
+                            btnText = "Sign Up"
+                        />
+
+
+
+	3) pass the token via context to App.js
+		  const { token } = useContext(UserContext)
+
+	 route to profile page automatically if token is present or signed in
+	
+		   <Route exact path = "/" element = {token ? <Navigate replace to = "/profile"  /> : <Auth />} />
+		
+
+
+
+LOGGED IN 
+
+	same code as signup except endpoint is "/login"
+
+
+
+LOGOUT
+
+	1)  created a logout function in UserProvider.js
+		
+    function logout() {
+        localStorage.removeItem("token")
+        localStorage.removeItem("user")
+        setUserState( {
+            user: {},
+            token: "",
+            post: [ ]
+        })
+    }
+
+that will clear the token and user from state and local storage 
+
+	Add a button to the Navbar that says Logout that has an onClick set to the function logout() passed from props from App.js
+
+		const { logout } = props
+
+		<button onClick = {logout}>Logout</button>
+	
+
+
+
+
+

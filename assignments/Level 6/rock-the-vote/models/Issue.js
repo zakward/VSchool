@@ -14,7 +14,7 @@ const issueSchema = new Schema( {
         type: String
     },
     user : {
-        type: Schema.Types.ObjectId,
+        type: Schema.Types.ObjectId, //id from another item in
         ref: "User",
         required: true
     }

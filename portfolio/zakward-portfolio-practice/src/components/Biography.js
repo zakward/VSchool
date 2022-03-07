@@ -16,8 +16,8 @@ function Biography() {
                     <h3 className = "profile-description">Web Development</h3>
                     <div className = "icon-container">
                         <a href = "mailto: zakward85@gmail.com"><div className = "icon email"></div></a>
-                        <a href = "https://github.com/zakward"><div className = "icon github"></div></a>
-                        <a href = "https://www.linkedin.com/in/zakmward/"><div className = "icon linkedIn"></div></a>
+                        <a href = "https://github.com/zakward" target = "_blank" rel="noreferrer" ><div className = "icon github"></div></a>
+                        <a href = "https://www.linkedin.com/in/zakmward/" target = "_blank" rel="noreferrer" ><div className = "icon linkedIn"></div></a>
                     </div>
                 </div>
                 <div className = "biography-container">

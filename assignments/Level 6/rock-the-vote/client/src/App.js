@@ -10,12 +10,12 @@ import { UserContext } from "./context/UserProvider"
 
 function App() {
 
-  const { token } = useContext(UserContext)
+  const { token, logout } = useContext(UserContext)
 
   return (
     <>
       <div className = "app">
-        <Navbar />
+        <Navbar logout = {logout}/>
         <Routes>
           <Route exact path = "/" element = {token ? <Navigate replace to = "/profile"  /> : <Auth />} />
           <Route path = "/profile" element = {<Profile />} />

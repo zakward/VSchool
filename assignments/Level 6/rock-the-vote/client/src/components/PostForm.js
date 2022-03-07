@@ -1,4 +1,5 @@
-import React, {useState} from "react"
+import React,  {useState } from "react"
+
 
 const initInputs = {
     title: "",
@@ -6,8 +7,9 @@ const initInputs = {
     imgUrl: ""
 }
 
-function PostForm() {
+function PostForm(props) {
 
+    const { addPost } = props
     const [inputs, setInputs] = useState(initInputs)
 
     function handleChange(e) {
@@ -20,6 +22,8 @@ function PostForm() {
 
     function handleSubmit(e) {
         e.preventDefault()
+        addPost(inputs)
+        setInputs(initInputs)
     }
 
     const { title, description, imgUrl } = inputs

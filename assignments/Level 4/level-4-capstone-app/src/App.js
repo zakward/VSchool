@@ -8,22 +8,16 @@ import RandomDrink from "./components/RandomDrink"
 import SearchByName from "./components/SearchByName"
 import DrinkDetail from "./components/DrinkDetail"
 
-const linkStyle = {
-    textDecoration: "none",
-    color: "white",
-    fontSize: "25px",
-    fontFamily: "Lora, serif"
-}
 
 function App() {
     return (
         <>
             <nav className = "navbar">
-                <Link to ="/" style = {linkStyle}>HOME</Link>
-                <Link to = "/about" style = {linkStyle}>ABOUT</Link>
-                <h3 className = "nav-title">The Cocktail Connoisseur App</h3>
-                <Link to = "/randomDrink" style = {linkStyle}>RANDOM DRINK GENERATOR</Link>
-                <Link to = "/searchByName" style = {linkStyle}>SEARCH BY</Link>
+                <Link to ="/" className = "link-style" >HOME</Link>
+                <Link to = "/about" className = "link-style" >ABOUT</Link>
+                <h3 className = "nav-title" >The Cocktail Connoisseur App</h3>
+                <Link to = "/randomDrink" className = "link-style" >RANDOM DRINK GENERATOR</Link>
+                <Link to = "/searchByName" className = "link-style" >SEARCH BY</Link>
             </nav>
             <Outlet />
 

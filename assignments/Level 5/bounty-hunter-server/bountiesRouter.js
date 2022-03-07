@@ -54,14 +54,16 @@ bountiesRouter.post("/", (req, res, next) => {
  // Get One
 bountiesRouter.get("/:bountyId",(req, res, next) => {
     const bountyId = req.params.bountyId
-    const foundBounty = bounty.find(bounty => bounty._id === bountyId)
-    if(!foundBounty) {
+    Bounty.findOne( {_id: bountyId}, (err, foundBounty) => {
+        if(!foundBounty) {
         const error = new Error("The bounty was not found.")
         res.status(500)
         return next(error)
     }
     res.status(200).send(foundBounty)
 })
+    })
+    
 
 //Get by Type
 // bountiesRouter.get("/search/type", (req, res, next) => {
