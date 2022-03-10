@@ -8,6 +8,7 @@ import { UserContext } from "./context/UserProvider"
 
 
 
+
 function App() {
 
   const { token, logout } = useContext(UserContext)
@@ -15,11 +16,11 @@ function App() {
   return (
     <>
       <div className = "app">
-        <Navbar logout = {logout}/>
+        { token && <Navbar logout = {logout}/>}
         <Routes>
           <Route exact path = "/" element = {token ? <Navigate replace to = "/profile"  /> : <Auth />} />
-          <Route path = "/profile" element = {<Profile />} />
-          <Route path = "/public" element = {<Public /> } /> 
+          <Route path = "/profile" element = { token ? <Profile /> : <Navigate replace to ="/" />} />
+          <Route path = "/public" element = { token ? <Public />: <Navigate replace to = "/" /> } /> 
          </Routes>
       </div>
     </>

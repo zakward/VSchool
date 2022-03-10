@@ -27,7 +27,7 @@ issueRouter.post("/", (req, res, next) => {
     })
 })
 
-//Get issues by user id
+//Get issues by user id // getting all your posts on login
 issueRouter.get("/user", (req, res, next) => {
     Issue.find( { user: req.user._id }, (err, issues) => {
         if (err) {
@@ -64,6 +64,48 @@ issueRouter.put("/:issueId", (req, res, next) => {
         }
     )
 })
+
+//Edit the Total Votes
+issueRouter.put("/upVotesUsers/:issueId", (req, res, next) => {
+    Issue.findByIdAndUpdate(
+        {_id: req.params.issueId},
+        {
+            $addToSet: {upVoteUsers: req.user._id},
+            $pull: {downVoteUsers: req.user._id}
+    },
+        { new : true },
+        (err, updatedVoteCount) => {
+            if(err) {
+                res.status(500)
+                return next(err)
+            }
+            return res.status(201).send(updatedVoteCount)
+        }
+    )
+})
+
+
+issueRouter.put("/downVotesUsers/:issueId", (req, res, next) => {
+    Issue.findByIdAndUpdate(
+        {_id: req.params.issueId},
+        {
+            $addToSet: {downVoteUsers: req.user._id},
+            $pull: {upVoteUsers: req.user._id}
+    },
+        { new : true },
+        (err, updatedVoteCount) => {
+            if(err) {
+                res.status(500)
+                return next(err)
+            }
+            return res.status(201).send(updatedVoteCount)
+        }
+    )
+})
+
+
+
+
 
 
 //DELETE an Issue by ID

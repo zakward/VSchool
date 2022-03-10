@@ -4,6 +4,7 @@ require("dotenv").config()
 const morgan = require("morgan")
 const mongoose = require("mongoose")
 const expressJwt = require("express-jwt")  //acts as gatekeeper to check for tokens
+const uri = process.env.MONGODB_URI
 const PORT = process.env.PORT || 6000
 
 app.use(morgan("dev")) //dev mode for error handling
@@ -12,7 +13,7 @@ app.use(express.json()) // make everything json
 
 //connect to mongodb
 mongoose.connect(
-    "mongodb://localhost:27017/rock-the-vote", 
+ uri, 
     (err) => {
         if (err) throw err
         console.log("Connected to the database")

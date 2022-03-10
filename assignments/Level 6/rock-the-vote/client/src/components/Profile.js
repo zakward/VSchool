@@ -6,7 +6,7 @@ import { UserContext } from "../context/UserProvider"
 
 function Profile() {
 
-    const { user: { username}, addPost } = useContext(UserContext)
+    const { user: { username}, addPost, post } = useContext(UserContext)
 
     return (
         <>
@@ -15,6 +15,7 @@ function Profile() {
                 <h3>Add a Post</h3>
                 <PostForm addPost = {addPost} />
                 <h3>Your Posts</h3>
+                <PostList post = {post} />
             </div>
         </>
     )

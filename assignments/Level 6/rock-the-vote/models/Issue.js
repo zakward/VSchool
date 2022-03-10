@@ -13,6 +13,14 @@ const issueSchema = new Schema( {
     imgUrl : {
         type: String
     },
+    upVoteUsers: [{
+        type: Schema.Types.ObjectId, 
+        ref: "User"
+    }],
+    downVoteUsers: [{
+        type: Schema.Types.ObjectId, 
+        ref: "User"
+    }],
     user : {
         type: Schema.Types.ObjectId, //id from another item in
         ref: "User",

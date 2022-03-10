@@ -8,7 +8,7 @@ function Auth() {
     const [inputs, setInputs] = useState(initInputs)
     const [toggle, setToggle] = useState(false)
 
-    const { signup, login } = useContext(UserContext)
+    const { signup, login, errMsg, resetAuthErr } = useContext(UserContext)
 
     function handleChange(e) {
         const {name, value} = e.target
@@ -28,6 +28,11 @@ function Auth() {
         login(inputs)
     }
 
+    function toggleForm(){
+        setToggle(prev => !prev)
+        resetAuthErr()
+    }
+
     return (
         <>
            <div className = "auth-container">
@@ -39,8 +44,9 @@ function Auth() {
                             handleSubmit = {handleSignup}
                             inputs = {inputs}
                             btnText = "Sign Up"
+                            errMsg = {errMsg}
                         />
-                        <p onClick = { () => setToggle(prev => !prev)}>Already a member?</p>
+                        <p onClick = {toggleForm}>Already a member?</p>
                     </>
 
                     :
@@ -51,8 +57,9 @@ function Auth() {
                             handleSubmit = {handleLogin}
                             inputs = {inputs}
                             btnText = "Login"
+                            errMsg = {errMsg}
                         />
-                        <p>Not a member?</p>
+                        <p onClick = {toggleForm}>Not a member?</p>
                     </>
                }
            </div>

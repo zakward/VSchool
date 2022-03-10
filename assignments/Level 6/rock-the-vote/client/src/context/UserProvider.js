@@ -6,7 +6,7 @@ export const UserContext = React.createContext()
 const userAxios = axios.create() // 
 
 userAxios.interceptors.request.use(config => {
-    const { token } = localStorage.getItem("token")
+    const token  = localStorage.getItem("token")
     config.headers.Authorization = `Bearer ${token}`
     return config
 })
@@ -16,8 +16,11 @@ function UserProvider(props) {
     const initState = { 
         user: JSON.parse(localStorage.getItem("user")) || { }, 
         token: localStorage.getItem("token") || "", 
-        post: [ ]
+        post: [ ],
+        errMsg: ""
     }
+
+    const [ allPosts, setAllPosts ] = useState( [  ] )
 
     const [userState, setUserState] = useState(initState)
 
@@ -33,7 +36,7 @@ function UserProvider(props) {
                     token
                 }))
             })
-            .catch(err => console.log(err.response.data.message))
+            .catch(err => handleAuthErr(err.response.data.message))
     }
 
     function login(credentials) {
@@ -42,15 +45,22 @@ function UserProvider(props) {
                 const { user, token } = res.data
                 localStorage.setItem("token", token)
                 localStorage.setItem("user", JSON.stringify(user))
+                getUserPosts()
                 setUserState(prevUserState => ({
                     ...prevUserState,
                     user,
                     token
                 }))
             })
-            .catch(err => console.log(err.response.data.message))
+            .catch(err => handleAuthErr(err.response.data.message))
     }
 
+    function resetAuthErr(){
+        setUserState(prevUserState => ({
+            ...prevUserState,
+            errMsg: ""
+        }))
+    }
 
     function logout() {
         localStorage.removeItem("token")
@@ -62,11 +72,46 @@ function UserProvider(props) {
         })
     }
 
+    function handleAuthErr(errMsg){
+        setUserState(prevUserState => ({
+            ...prevUserState,
+            errMsg
+        }))
+    }
+
+
+    function getUserPosts() {
+        userAxios.get("/api/issue/user")
+            .then(res => setUserState(prevUserState => ({
+                ...prevUserState,
+                post: res.data
+            })))
+            .catch(err => console.log(err.response.data.errMsg))
+    }
+
+
     function addPost(newPost) {
         userAxios.post("/api/issue", newPost)
-        .then(res => console.log(res))
+        .then(res => {
+            setUserState(prevUserState => ({
+                ...prevUserState,
+                post :  [ ...prevUserState.post, res.data ]
+            }))
+        })
         .catch(err => console.log(err.response.data.errMsg))
     }
+
+    function getAllPosts() {
+        userAxios.get("/api/issue")
+            .then(res => setAllPosts(res.data))
+            .catch(err => console.log(err))
+    }
+
+    // function addUpVote() {
+    //     userAxios.post("")
+    // }
+
+    
 
     return (
         <UserContext.Provider
@@ -75,7 +120,12 @@ function UserProvider(props) {
                 signup,
                 login,
                 logout,
-                addPost
+                addPost,
+                resetAuthErr,
+                getAllPosts,
+                setAllPosts,
+                allPosts,
+                userAxios
             }
         }
         >

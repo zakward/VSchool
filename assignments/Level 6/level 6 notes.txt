@@ -184,7 +184,7 @@ LOGOUT
 
 that will clear the token and user from state and local storage 
 
-	Add a button to the Navbar that says Logout that has an onClick set to the function logout() passed from props from App.js
+	Add a button to the Navbar that says Logout that has an onClick set to the function logout() passed from props from App.js or context
 
 		const { logout } = props
 
@@ -192,6 +192,26 @@ that will clear the token and user from state and local storage
 	
 
 
+
+
+AXIOS INTERCEPTOR
+- create a new user instance of axios that intercepts the request and attaches the header to the request like in Postman when you add the Header Authorization: Bearer {token}
+
+
+
+
+to clear all data from database and install bcrypt for encryption of data
+$npm install bcrypt
+
+
+
+const userAxios = axios.create() // 
+
+userAxios.interceptors.request.use(config => {
+    const { token } = localStorage.getItem("token")
+    config.headers.Authorization = `Bearer ${token}`
+    return config
+})
 
 
 
