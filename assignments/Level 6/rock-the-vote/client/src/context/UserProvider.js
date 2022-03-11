@@ -101,16 +101,24 @@ function UserProvider(props) {
         .catch(err => console.log(err.response.data.errMsg))
     }
 
+
+ 
+
     function getAllPosts() {
         userAxios.get("/api/issue")
             .then(res => setAllPosts(res.data))
             .catch(err => console.log(err))
     }
 
-    // function addUpVote() {
-    //     userAxios.post("")
-    // }
 
+
+    // function setUser(user, token) {
+    //     setUserState(prevUserState => ({
+    //         ...prevUserState,
+    //         user,
+    //         token
+    //     }))
+    // }
     
 
     return (

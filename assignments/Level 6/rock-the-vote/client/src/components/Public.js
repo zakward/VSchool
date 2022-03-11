@@ -12,8 +12,34 @@ function Public() {
     }, [ ]
     )
 
-    const postElements = allPosts.map(post => {
+  
+
+const sortedPost = allPosts.sort((a,b) => {
+    const first = a.upVoteUsers.length - a.downVoteUsers.length
+    const second = b.upVoteUsers.length - b.downVoteUsers.length
+    if (first < second ) {
+        return 1
+    }
+    if (first  > second) {
+        return -1
+    }
+    return 0
+})
+console.log(sortedPost)
+
+    const postElements = sortedPost.map(post => {
      return <Post {...post} key = {post._id}/> })
+  
+     //IMPORTANT QUESTION --> how to re render public page when upvote or downvote changes
+
+
+
+
+
+
+
+
+
 
     return (
         <>

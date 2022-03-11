@@ -1,10 +1,11 @@
-import React, { useContext } from "react"
+import React, { useContext, useEffect } from "react"
 import { Routes, Route, Navigate } from "react-router-dom"
 import Navbar from "./components/Navbar"
 import Auth from "./components/Auth"
 import Profile from "./components/Profile"
 import Public from "./components/Public"
 import { UserContext } from "./context/UserProvider"
+import { SettingsInputSvideoRounded } from "@material-ui/icons"
 
 
 

@@ -21,8 +21,12 @@ const issueSchema = new Schema( {
         type: Schema.Types.ObjectId, 
         ref: "User"
     }],
+    // totalVotes : {
+    //     type : Number
+    //     // default: upVoteUsers.length - downVoteUsers.length
+    // },
     user : {
-        type: Schema.Types.ObjectId, //id from another item in
+        type: Schema.Types.ObjectId, //id from another item 
         ref: "User",
         required: true
     }

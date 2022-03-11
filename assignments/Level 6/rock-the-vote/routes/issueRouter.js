@@ -1,7 +1,9 @@
-const express = require("express")
+  const express = require("express")
 const issueRouter = express.Router()
 const Issue = require("../models/Issue.js")
+const User = require("../models/User.js")
 const jwt = require("jsonwebtoken")
+const { useRoutes } = require("react-router-dom")
 
 //Get all issues
 issueRouter.get("/", (req, res, next) => {
@@ -38,6 +40,18 @@ issueRouter.get("/user", (req, res, next) => {
     })
 })
 
+//get user by id
+issueRouter.get("/:userId", (req, res, next) => {
+    User.findById(req.params.userId,
+        (err, issues) => {               
+        if (err) {
+            res.status(500)
+            return next(err)
+        }
+        return res.status(200).send(issues.username)
+    })
+})
+
 //Get issue by id
 issueRouter.get("/:issueId", (req, res, next) => {
     Issue.findById(req.params.issueId, (err, issue) => {
@@ -71,7 +85,7 @@ issueRouter.put("/upVotesUsers/:issueId", (req, res, next) => {
         {_id: req.params.issueId},
         {
             $addToSet: {upVoteUsers: req.user._id},
-            $pull: {downVoteUsers: req.user._id}
+            $pull: {downVoteUsers: req.user._id},
     },
         { new : true },
         (err, updatedVoteCount) => {

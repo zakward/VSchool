@@ -7,7 +7,7 @@ import { UserContext } from "../context/UserProvider"
 function Profile() {
 
     const { user: { username}, addPost, post } = useContext(UserContext)
-
+    
     return (
         <>
             <div className = "profile">

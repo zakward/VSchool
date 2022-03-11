@@ -2,11 +2,20 @@ import React, {useState, useContext} from "react"
 import PointUp from "../260-point-up.png"
 import PointDown from "../262-point-down.png"
 import {UserContext} from "../context/UserProvider.js"
+import Comments from "../comments/Comments.js"
 
 function Post(props) {
     const { title, description, imgUrl, upVoteUsers, downVoteUsers, _id} = props
-    const [ totalVotes, setTotalVotes ] = useState(upVoteUsers.length - downVoteUsers.length)
 
+    const [ totalVotes, setTotalVotes ] = useState(props.upVoteUsers.length - props.downVoteUsers.length)
+    // (upVoteUsers.length - downVoteUsers.length)
+
+    // function calcTotalVotes() {
+    //     const updatedTotal = upVoteUsers.length - downVoteUsers.length
+    //     return setTotalVotes({
+    //         totalVotes: updatedTotal
+    //     })
+    // }
 
     const { userAxios } = useContext(UserContext)
 
@@ -23,7 +32,10 @@ function Post(props) {
             .catch(err => console.log(err))
     }
 
-    console.log(totalVotes)
+
+
+
+    
 
     return (
         <>
@@ -35,6 +47,7 @@ function Post(props) {
                 <img src = {PointUp} onClick = {handleVoteClickUp}/>UpVote   
                 <img src = {PointDown} onClick = {handleVoteClickDown} /> DownVote
                 <p> Total Votes = { totalVotes } </p>
+                <Comments id = {_id} />
             </div>
         </>
     )
