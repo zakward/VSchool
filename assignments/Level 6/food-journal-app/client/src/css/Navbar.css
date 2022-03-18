@@ -1,0 +1,41 @@
+* {
+    margin: 0;
+}
+
+body {
+    box-sizing: border-box;
+}
+
+.navbar {
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    padding-left: 25px;
+    border-bottom: 1px solid white;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: white;
+}
+
+.links-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 10px;
+}
+
+.nav-title {
+    font-size: 26px;
+}
+
+.logout-btn {
+    margin-right: 25px;
+    cursor: pointer;
+}
+
+

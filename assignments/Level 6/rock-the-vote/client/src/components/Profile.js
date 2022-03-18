@@ -1,4 +1,4 @@
-import React,  { useContext } from "react"
+import React,  { useContext, useEffect } from "react"
 import PostForm from "./PostForm"
 import Post from "./Post"
 import PostList from "./PostList"
@@ -6,7 +6,12 @@ import { UserContext } from "../context/UserProvider"
 
 function Profile() {
 
-    const { user: { username}, addPost, post } = useContext(UserContext)
+    const { user: { username}, addPost, post, getUserPosts} = useContext(UserContext)
+
+    useEffect(() => {
+        getUserPosts()
+    }, [ ]
+    )
     
     return (
         <>

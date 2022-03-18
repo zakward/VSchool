@@ -5,9 +5,11 @@ import {UserContext} from "../context/UserProvider.js"
 import Comments from "../comments/Comments.js"
 
 function Post(props) {
-    const { title, description, imgUrl, upVoteUsers, downVoteUsers, _id} = props
+    const { title, description, imgUrl, upVoteUsers, downVoteUsers, _id, user } = props
 
     const [ totalVotes, setTotalVotes ] = useState(props.upVoteUsers.length - props.downVoteUsers.length)
+
+    const [username, setUsername ] = useState("")
     // (upVoteUsers.length - downVoteUsers.length)
 
     // function calcTotalVotes() {
@@ -32,15 +34,15 @@ function Post(props) {
             .catch(err => console.log(err))
     }
 
-
-
-
-    
+console.log(user)
+        userAxios.get(`/api/issue/${user}`)
+            .then(res => setUsername(res.data))
+            .catch(err => console.log(err))
 
     return (
         <>
             <div className = "post">
-                <h1> USER: </h1>
+                <h1> USER: {username}</h1>
                 <h2> { title } </h2>
                 <h3> { description } </h3>
                 <img src = {imgUrl} alt = {imgUrl} width = {300} />

@@ -133,7 +133,8 @@ function UserProvider(props) {
                 getAllPosts,
                 setAllPosts,
                 allPosts,
-                userAxios
+                userAxios,
+                getUserPosts
             }
         }
         >

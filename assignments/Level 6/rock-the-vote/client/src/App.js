@@ -5,7 +5,6 @@ import Auth from "./components/Auth"
 import Profile from "./components/Profile"
 import Public from "./components/Public"
 import { UserContext } from "./context/UserProvider"
-import { SettingsInputSvideoRounded } from "@material-ui/icons"
 
 
 

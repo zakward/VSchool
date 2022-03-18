@@ -1,6 +1,7 @@
 const express = require("express")
 const commentRouter = express.Router()
 const Comment = require("../models/Comment.js")
+const User = require("../models/User.js")
 
 
 
@@ -31,7 +32,9 @@ commentRouter.get("/", (req, res, next) => {
 
 //Get Comment by Issue Id
 commentRouter.get("/:issueId", (req, res, next) => {
-    Comment.find({issue: req.params.issueId},(err, comments) => {
+    Comment.find({issue: req.params.issueId})
+    .populate("user")
+    .exec((err, comments) => {
         if (err) {
             res.status(500)
             return next(err)
