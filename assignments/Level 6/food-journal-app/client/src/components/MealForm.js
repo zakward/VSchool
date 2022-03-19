@@ -3,15 +3,15 @@ import axios from "axios"
 import { UserContext } from "../context/UserProvider.js"
 
 
-function MealForm() {
+function MealForm(props) {
 
     const initInputs = {
-        title:  "",
-        description : "",
-        mealCategory: "",
-        imgUrl: "",
-        totalCalories: 0,
-        mealDate: ""
+        title:  props.title || "",
+        description : props.description || "",
+        mealCategory: props.mealCategory || "",
+        imgUrl: props.imgUrl || "",
+        totalCalories: props.totalCalories || 0,
+        mealDate: props.mealDate || ""
     }
 
     const [inputs, setInputs] = useState(initInputs)
@@ -28,7 +28,8 @@ function MealForm() {
 
     function handleSubmit(e) {
         e.preventDefault()
-        addMeal(inputs)
+        console.log(inputs)
+        props.submit(inputs, props._id)
         setInputs(initInputs)
     }
 
@@ -41,11 +42,11 @@ return (
     <div className = "meal-form-wrapper">
             <h2 className = "form-header">Log Meal</h2>
             <form onSubmit = {handleSubmit} className = "meal-form">
-                <input type = "text" name= "title" value= {title} onChange = {handleChange} className = "meal-form-input" placeholder="add meal title"/>
-                <input type = "text" name= "description" value= {description}onChange = {handleChange} className = "meal-form-input" placeholder="add meal description"/>
-                <input type = "text" name= "totalCalories" value= {totalCalories} onChange = {handleChange} className = "meal-form-input" placeholder="add meal total calories"/>
-                <input type = "text" name= "imgUrl" value= {imgUrl} onChange = {handleChange} className = "meal-form-input" placeholder="add meal imgUrl"/>
-                <input type = "date" name= "mealDate" value= {mealDate} onChange = {handleChange} className = "meal-form-input" placeholder="add meal date"/>
+                Meal Title:<input type = "text" name= "title" value= {title} onChange = {handleChange} className = "meal-form-input" placeholder="add meal title"/>
+                Meal Description:<input type = "text" name= "description" value= {description}onChange = {handleChange} className = "meal-form-input" placeholder="add meal description"/>
+                Meal Calories: <input type = "text" name= "totalCalories" value= {totalCalories} onChange = {handleChange} className = "meal-form-input" placeholder="add meal total calories"/>
+                Meal Image URL: <input type = "text" name= "imgUrl" value= {imgUrl} onChange = {handleChange} className = "meal-form-input" placeholder="add meal imgUrl"/>
+               Meal Date: <input type = "date" name= "mealDate" value= {mealDate} onChange = {handleChange} className = "meal-form-input" placeholder="add meal date"/>
                 <select name = "mealCategory" value = {mealCategory} onChange = {handleChange}>
                     <option>--Category--</option>
                     <option>Breakfast</option>
@@ -54,11 +55,9 @@ return (
                     <option>Snack</option>
                     <option>Dessert</option>   
                 </select>
-                <button className = "addMeal-btn">Add Meal</button>
+                <button className = "addMeal-btn">{props.btnText}</button>
             </form>
     </div>
-
-
 </>
 
 )

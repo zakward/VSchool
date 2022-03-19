@@ -36,6 +36,7 @@
 .meal-calories {
     font-weight: 800;
     font-size: 18px;
+    margin-left: 10px;
 }
 
 .meal-label {
@@ -45,6 +46,7 @@
 
 .meal-date {
     font-weight: 800;
+    margin-left: 25px;
 }
 
 .description-wrapper {
@@ -78,3 +80,62 @@
     margin-top: 10px;
 }
 
+.button {
+    margin-top: 20px;
+    margin-right: 5px;
+    position: relative;
+    left: 55px;
+    border-radius: 7px;
+
+}
+
+@media only screen and (max-width: 800px) {
+
+    .meal-wrapper {
+        width: 300px;
+    }
+
+    .meal-category {
+        font-size: 26px;
+    }
+
+    .meal-calories {
+        width: 75px;
+    }
+
+    .meal-date {
+        margin-left: 1px;
+    }
+
+}
+
+@media only screen and (max-width: 585px) {
+
+    .meal-wrapper {
+        width: 225px;
+    }
+
+    .meal-img {
+        width: 75px;
+        height: 75px;
+    }
+
+    .meal-calories {
+        font-size: 12px;
+        width: 57px;
+    }
+
+    .meal-date {
+        font-size: 12px;
+        margin-left: 1px;
+    }
+
+    .meal-category {
+        font-size: 22px;
+    }
+
+    .meal-description {
+        font-size: 14px;
+    }
+
+}

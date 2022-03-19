@@ -22,9 +22,9 @@ function UserProvider(props) {
 
     const [ userState, setUserState ] = useState(initState)
 
-    const [ categoryFilterState, setCategoryFilterState ] = useState("All")
+    const [ calorieCounter, setCalorieCounter ] = useState(0)
 
-    const [ dateFilterState, setDateFilterState ] =useState("")
+
 
     function signup(credentials) {
         axios.post("/auth/signup", credentials)
@@ -93,6 +93,7 @@ function UserProvider(props) {
     function addMeal(newMeal) {
         userAxios.post("/api/meal", newMeal)
             .then(res => {
+                console.log(res.data)
                 setUserState(prevUserState => ({
                     ...prevUserState,
                     meals: [ ...prevUserState.meals, res.data]
@@ -101,39 +102,16 @@ function UserProvider(props) {
             .catch(err => console.log(err.response.data.errMsg))
    }
 
-//WORKING ON SETTING THE STATE OF THE DATE INPUT AND SELECT INPUT IN PROFILE.JS
-
-   function handleFilter(e) {
-        setCategoryFilterState(e.target.value)
-
-       if (!e.target.value) {
-           return
-       }
-       if (e.target.value === "All") {
-           getUserMeals()
-       }
-       else {
-        console.log(categoryFilterState)
-        userAxios.get(`/api/meal/mealCategory?mealCategory=${categoryFilterState}&mealDate=${dateFilterState}`)
-        .then(res => setUserState(prevUserState => ({
-            ...prevUserState,
-            meals: res.data
-        })))
+   function editMeal(updates, mealId) {
+    userAxios.put(`api/meal/${mealId}`, updates)
+        .then(res => {   
+              setUserState(prevUserState => prevUserState.meals.map(meal => meal._id !== mealId ? meal : res.data))
+        })
         .catch(err => console.log(err))
-       }
-   }
+}
 
-     function handleDateFilter(e) {
-        const date = new Date(e.target.value).toISOString()
-        setDateFilterState(date)
-        console.log(dateFilterState)
-        userAxios.get(`/api/meal/mealCategory?mealCategory=${categoryFilterState}&mealDate=${dateFilterState}`)
-        .then(res => setUserState(prevUserState => ({
-            ...prevUserState,
-            meals: res.data
-        })))
-        .catch(err => console.log(err))
-    }
+
+
 
     return (
         <UserContext.Provider
@@ -145,13 +123,10 @@ function UserProvider(props) {
                 resetAuthErr,
                 userAxios,
                 getUserMeals,
-                addMeal,
-                handleFilter,
-                setCategoryFilterState,
-                categoryFilterState,
-                dateFilterState,
-                setDateFilterState,
-                handleDateFilter
+                addMeal,    
+                calorieCounter,
+                setCalorieCounter, 
+                editMeal        
             }}
         >
             {props.children}

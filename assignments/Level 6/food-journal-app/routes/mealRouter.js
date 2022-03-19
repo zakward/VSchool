@@ -60,6 +60,22 @@ mealRouter.get("/date", (req, res, next) => {
 })
 
 
+mealRouter.put("/:mealId", (req, res, next) => {
+    Meal.findByIdAndUpdate(
+        {_id : req.params.mealId, user: req.user._id},
+        req.body,
+        {new : true },
+        (err, updatedMeal) => {
+            if (err) {
+                res.status(500)
+                return next(err)
+            }
+            return res.status(201).send(updatedMeal)
+        }
+    )
+})
+
+
 
 
 

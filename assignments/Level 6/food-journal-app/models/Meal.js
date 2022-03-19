@@ -22,7 +22,7 @@ const mealSchema = new Schema( {
         type: String
     },
     mealDate: {
-        type: Date
+        type: String
     },
     user : {
         type: Schema.Types.ObjectId, //id from another item 

@@ -1,5 +1,6 @@
 * {
     margin: 0;
+
 }
 
 .meal-list {
@@ -7,4 +8,64 @@
     flex-direction: row;
     gap: 25px;
     flex-wrap: wrap;
+}
+
+.calorie-total {
+    margin-left: 20px;
+    font-size: 26px;
+    margin-top: 20px;
+}
+
+.line-break {
+    margin-bottom: 15px;
+    margin-top: 5px;
+}
+
+@media only screen and  (max-width: 1200px) {
+
+    .calorie-total {
+        position: sticky;
+        top: 10px;
+        margin-left: 5px;
+    }
+
+}
+
+@media only screen and (max-width: 685px) {
+
+    .meal-list {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .calorie-total {
+      position: sticky;
+      top: 20px;
+      font-size: 16px;
+      
+    }
+
+}
+
+@media only screen and (max-width: 600px) {
+
+    .calorie-total {
+        font-size: 15px;
+    }
+
+}
+
+@media only screen and (max-width: 475px) {
+
+    .calorie-total {
+        font-size: 12px;
+        
+    }
+
+}
+
+@media only screen and (max-width: 410px) {
+    .calorie-total {
+        font-size: 10px;
+    }
 }
