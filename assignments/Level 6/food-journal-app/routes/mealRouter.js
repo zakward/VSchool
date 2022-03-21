@@ -76,6 +76,18 @@ mealRouter.put("/:mealId", (req, res, next) => {
 })
 
 
+mealRouter.delete("/:mealId", (req, res, next) => {
+    Meal.findByIdAndDelete({_id: req.params.mealId, user: req.user._id},
+        (err, deletedMeal) => {
+            if (err) {
+                res.status(500)
+                return next(err)
+            }
+            return res.status(201).send(`Successfully Deleted Meal : ${deletedMeal.title}`)
+        }
+        )
+})
+
 
 
 

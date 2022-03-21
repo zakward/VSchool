@@ -9,7 +9,7 @@ function MealList(props) {
 
     const { meals, date, category } = props
     
-    const { userAxios, editMeal } = useContext(UserContext)
+    const { userAxios, editMeal, deleteMeal } = useContext(UserContext)
 
     console.log(date)
     // useEffect(() => {
@@ -48,7 +48,7 @@ function MealList(props) {
         </span>
             <div className = "meal-list">
                 {filteredMeals 
-                .map(meal => <Meal {...meal} key = {meal._id} editMeal = {editMeal} />)}
+                .map(meal => <Meal {...meal} key = {meal._id} deleteMeal = {deleteMeal} editMeal = {editMeal} />)}
             </div>
     </>
 

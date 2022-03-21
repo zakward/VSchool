@@ -28,12 +28,12 @@ function MealForm(props) {
 
     function handleSubmit(e) {
         e.preventDefault()
-        console.log(inputs)
+        console.log(e.target)
         props.submit(inputs, props._id)
         setInputs(initInputs)
     }
 
-    const {title, description, imgUrl, totalCalories, mealDate, mealCategory } = inputs
+    const { title, description, imgUrl, totalCalories, mealDate, mealCategory } = inputs
    
 
 return (
@@ -47,7 +47,7 @@ return (
                 Meal Calories: <input type = "text" name= "totalCalories" value= {totalCalories} onChange = {handleChange} className = "meal-form-input" placeholder="add meal total calories"/>
                 Meal Image URL: <input type = "text" name= "imgUrl" value= {imgUrl} onChange = {handleChange} className = "meal-form-input" placeholder="add meal imgUrl"/>
                Meal Date: <input type = "date" name= "mealDate" value= {mealDate} onChange = {handleChange} className = "meal-form-input" placeholder="add meal date"/>
-                <select name = "mealCategory" value = {mealCategory} onChange = {handleChange}>
+                <select name = "mealCategory" value = {mealCategory} onChange = {handleChange} className = "category-btn">
                     <option>--Category--</option>
                     <option>Breakfast</option>
                     <option>Lunch</option>

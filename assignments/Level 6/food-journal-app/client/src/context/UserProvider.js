@@ -103,12 +103,26 @@ function UserProvider(props) {
    }
 
    function editMeal(updates, mealId) {
-    userAxios.put(`api/meal/${mealId}`, updates)
-        .then(res => {   
-              setUserState(prevUserState => prevUserState.meals.map(meal => meal._id !== mealId ? meal : res.data))
-        })
+    userAxios.put(`/api/meal/${mealId}`, updates)
+        .then(res => { 
+                console.log(res.data)  
+              setUserState(prevUserState => ({
+                  ...prevUserState,
+                  meals: prevUserState.meals.map(meal => meal._id !== mealId ? meal : res.data) 
+              }))
+            })
         .catch(err => console.log(err))
 }
+
+
+    function deleteMeal(mealId) {
+        userAxios.delete(`api/meal/${mealId}`)
+            .then(res => setUserState(prevUserState => ({
+                ...prevUserState,
+                meals : prevUserState.meals.filter(meal => meal._id !== mealId)
+            })))
+            .catch(err => console.log(err))
+    }
 
 
 
@@ -126,7 +140,8 @@ function UserProvider(props) {
                 addMeal,    
                 calorieCounter,
                 setCalorieCounter, 
-                editMeal        
+                editMeal,
+                deleteMeal        
             }}
         >
             {props.children}

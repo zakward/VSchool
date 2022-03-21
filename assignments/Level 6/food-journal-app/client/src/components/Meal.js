@@ -6,7 +6,7 @@ import MealForm from "../components/MealForm.js"
 
 function Meal(props) {
 
-    const { title, description, totalCalories, imgUrl, mealDate, mealCategory, _id } = props
+    const { title, description, totalCalories, imgUrl, mealDate, mealCategory, _id, deleteMeal } = props
 
     const [ editToggle, setEditToggle ] = useState(false)
 
@@ -42,8 +42,8 @@ function Meal(props) {
                     <div className = "title-description">
                         <h1 className = "meal-title">{title}</h1>
                         <p className = "meal-description">{description}</p>
-                        <button className = "button delete">X</button>
-                        <button className = "button edit" onClick = {toggleForm}>Edit</button>
+                        <button className = "button delete" onClick = {() => deleteMeal(_id)}>X</button>
+                        <button className = "button edit" onClick = {() => toggleForm() }>Edit</button>
                     </div>
                         <img src = {imgUrl} className = "meal-img"/>
                 </div>
@@ -54,18 +54,21 @@ function Meal(props) {
         :
 
         <>
-            <MealForm
+        <div className = "edit-form">
+               <MealForm
                 title = {title}
                 description = {description}
                 totalCalories = {totalCalories}
                 imgUrl = {imgUrl}
                 mealDate = {mealDate}
                 mealCategory = {mealCategory}
-                btnText = "Submit Edit"
+                btnText = "SAVE"
                 submit = {props.editMeal}
                 _id = {_id}
             />
-            <button className = "button edit" onClick = {toggleForm}>Close</button>
+            <button className = "button edit" onClick = {toggleForm}>CLOSE</button>
+        </div>
+         
         </>
 }
 </>

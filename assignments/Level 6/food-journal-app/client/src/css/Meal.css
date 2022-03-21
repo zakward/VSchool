@@ -26,11 +26,12 @@
     border-top-right-radius: 9px;
 }
 
-.meal-category  {
+.category-btn {
     background-color: white;
-    color: rgba(4,189,228,1); 
     padding-left: 15px;
-    font-size: 46px;
+    font-size: 14px;
+    width: 150px;
+    text-align: center;
 }
 
 .meal-calories {
@@ -82,11 +83,17 @@
 
 .button {
     margin-top: 20px;
-    margin-right: 5px;
-    position: relative;
-    left: 55px;
+    margin-right: 10px;
+    /* position: relative;
+    left: 55px; */
     border-radius: 7px;
+    color: rgba(4,189,228,1); 
+    font-weight: 800;
+}
 
+.meal-category {
+    font-size: 36px;
+    margin-left: 12px;
 }
 
 @media only screen and (max-width: 800px) {
@@ -118,6 +125,7 @@
     .meal-img {
         width: 75px;
         height: 75px;
+        margin-top: 20px;
     }
 
     .meal-calories {
@@ -130,12 +138,16 @@
         margin-left: 1px;
     }
 
-    .meal-category {
-        font-size: 22px;
+    .category-btn {
+        font-size: 15px;
     }
 
     .meal-description {
         font-size: 14px;
+    }
+
+    .meal-title {
+        font-size: 18px;
     }
 
 }

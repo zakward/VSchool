@@ -46,9 +46,15 @@ body {
     padding-left: 10px;
 }
 
+
+
 .addMeal-btn {
     width: 100px;
     cursor: pointer;
+    border-radius: 8px;
+    color: rgba(4,189,228,1); 
+    padding: 2px;
+    font-weight: 800;
 }
 
 .saved-title {
@@ -77,6 +83,48 @@ body {
     margin-left: 25px;
     margin-bottom: 20px;
 }
+
+.edit-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.edit-form .form-header {
+    font-size: 18px;
+}
+
+.edit-form .meal-form {
+    margin-top: 10px;
+    padding-top: 12px;
+    padding-bottom: 8px;
+    gap: 6px;
+    font-size: 12px;
+}
+
+.edit-form .meal-form-input {
+    width: 265px;
+    height: 18px;
+    font-size: 12px;
+}
+
+.edit-form .addMeal-btn {
+    width: 50px;
+    border-radius: 8px;
+    color: rgba(4,189,228,1); 
+    padding: 2px;
+    font-size: 12px;
+    font-weight: 800;
+    margin-top: 10px;
+}
+
+.edit-form .button {
+    margin-top: 8px;
+    margin-right: 0px;
+}
+
+
 
 
 @media only screen and (max-width: 685px) {

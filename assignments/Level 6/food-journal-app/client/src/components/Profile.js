@@ -35,7 +35,7 @@ function Profile() {
             <MealForm submit = {addMeal} btnText = "Add Meal" />
             <div className = "secondary-container">
                 <h2 className = "saved-title">Your Meals</h2>
-                <h3 className = "target">Target: 2200 Calories/Day</h3>
+                <h3 className = "target">Target: 2000 Calories/Day</h3>
                 <p className = "target" >Select date to view meal logs </p>
                 <label className = "date-filter">Filter by Date :</label>
                 <input type = "date" name = "date"   onChange = {handleDateFilter} value = {dateFilterState} className = "date-input" />
